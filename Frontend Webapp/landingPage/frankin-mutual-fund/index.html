@@ -1,0 +1,556 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Home | Frankin Mutual Fund</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- favicon -->		
+		<link href="./assets/images/logo/money.png" rel="icon" type="image/png">
+
+		<!-- all css here -->
+
+		<!-- bootstrap v3.3.6 css -->
+		<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+
+        <!-- meanmenu css -->
+        <link rel="stylesheet" href="./assets/css/meanmenu.min.css">
+		<!-- font-awesome css -->
+		<link rel="stylesheet" href="./assets/css/flaticon.css">
+		<!-- magnific css -->
+        <link rel="stylesheet" href="./assets/css/magnific.min.css">
+		<!-- style css -->
+		<link rel="stylesheet" href="./assets/css/style.css">
+		<!-- responsive css -->
+		<link rel="stylesheet" href="./assets/css/responsive.css">
+		
+		<!--MSAL JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js" class="pre"></script>
+        <script type="text/javascript" src="https://alcdn.msftauth.net/lib/1.2.1/js/msal.min.js" integrity="sha384-Z4L5heyGO9VZ/MBCDx9GRtQW50Hrmp32ByIKuqwFesWyB+MDNy9ueVgclolfwj1Q" crossorigin="anonymous"></script>
+
+
+	</head>
+		<body>
+        <div id="preloader"></div>
+        <header class="header-one">
+            <!-- header-area start -->
+            <div id="sticker" class="header-area hidden-xs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="row">
+                                <!-- logo start -->
+                                <div class="col-md-3 col-sm-3">
+                                    <div class="logo">
+                                        <!-- Brand -->
+                                        <a class="navbar-brand page-scroll white-logo" href="index.html">
+                                            <img src="./assets/images/logo/logo3.png" alt="Frankin White Logo">
+                                        </a>
+                                        <a class="navbar-brand page-scroll black-logo" href="index.html">
+                                            <img src="./assets/images/logo/logo.png" alt="Frankin Color Logo">
+                                        </a>
+                                    </div>
+                                    <!-- logo end -->
+                                </div>
+                                <div class="col-md-9 col-sm-9">
+                                    <div class="header-right-link">
+                                        <!-- search option end -->
+                                        <a class="s-menu" onclick="signIn()" href="javascript:void(0)" id="login-button" style="display:none;">Login</a>
+										<a class="s-menu" onclick="logout()" href="javascript:void(0)" id="logout-button" style="display:none;">Logout</a>
+                                    </div>
+                                    <!-- mainmenu start -->
+                                    <nav class="navbar navbar-default">
+                                        <div class="collapse navbar-collapse" id="navbar-example">
+                                            <div class="main-menu">
+                                                <ul class="nav navbar-nav navbar-right">
+                                                <li><a class="pages" href="./">Home</a></li>
+												<li><a rel="relativeanchor" href="#services-section">Services</a></li>											
+                                                <li><a href="about.html">About us</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </nav>
+                                    <!-- mainmenu end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header-area end -->
+            <!-- mobile-menu-area start -->
+            <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="mobile-menu">
+                                <div class="logo">
+                                    <a href="index.html"><img src="./assets/images/logo/logo.png" alt="" /></a>
+                                </div>
+                                <nav id="dropdown">
+                                    <ul>
+                                       <li><a class="pages" href="./">Home</a></li>
+									   <li><a rel="relativeanchor" href="#services-section">Services</a></li>
+                                       <li><a href="about.html">About us</a></li>
+									 <div class="header-right-link">
+											<!-- search option end -->
+											<a class="s-menu" onclick="signIn()" href="javascript:void(0)" id="mob-login-button" style="display:none;">Login</a>
+										    <a class="s-menu" onclick="logout()" href="javascript:void(0)" id="mob-logout-button" style="display:none;">Logout</a>
+									 </div>
+                                    </ul>
+
+                                </nav>
+
+                            </div>					
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile-menu-area end -->		
+        </header>
+        <!-- header end -->
+        <!-- Start Slider Area -->
+		<div class="slide-area slide-area-2 fix" data-stellar-background-ratio="0.6">
+            <div class="display-table">
+                <div class="display-table-cell">
+					<div class="container">
+						<div class="row">
+                            <div class="slide-text-inner">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <!-- Start Slider content -->
+                                    <div class="slide-content">
+									    <br>
+                                        <h2 class="title2">Investment made easy and secure</h2>
+                                        <p>A whole new way to invest and earn money using <br>smart fund management</p>
+										<br>
+                                        <div class="layer-1-3">
+                                            
+											<a class="s-menu" onclick="signUp()" href="javascript:void(0)" id="create-account-button" style="display:none;">Create Account</a>
+											<a class="s-menu" href="https://accounts.tashiqa.com" id="console-button" target="_blank" rel="noopener noreferrer"   style="display:none;">Go to Console</a>
+											
+                                            <div class="video-content">
+                                                <a href="https://www.youtube.com/watch?v=beryTFelYrE?autoplay=1&enablejsapi=1" class="video-play vid-zone">
+                                                    <p class="watch"><img src="./assets/images/play.png" alt="" width="15"></p>
+                                                    <span>Watch Video</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Slider content -->
+                                </div>
+								
+								
+								
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                   <div class="money-send">
+                                        <div class="calculator-inner">
+                                            <div class="single-cal">
+											
+											<h4>Investment Planner</h4>
+											<hr>
+											<div class="row">
+												<form id="contactForm" method="" action="#" class="contact-form">
+													<div class="col-md-6 col-sm-6 col-xs-12">
+													    <label>Starting Balance</label>
+														<input type="number" id="initial-balance" class="form-control" placeholder="Rs.1000" required data-error="Please enter your starting balance" onkeyup="calculateProfit()">
+														<div class="help-block with-errors"></div>
+													</div>
+													<div class="col-md-6 col-sm-6 col-xs-12">
+													    <label>Monthly Deposit</label>
+														<input type="number" id="monthly-deposit" class="form-control" placeholder="Rs.100" required data-error="Please enter monthly deposit" onkeyup="calculateProfit()">
+														<div class="help-block with-errors"></div>
+													</div>
+													
+													<div class="col-md-6 col-sm-6 col-xs-12">
+													    <label>Expected Return (%)</label>
+														<input type="number" class="email form-control" id="expected-return" placeholder="5" required data-error="Please enter expected return" onkeyup="calculateProfit()">
+														<div class="help-block with-errors"></div>
+													</div>
+													<div class="col-md-6 col-sm-6 col-xs-12">
+													    <label>Duration (years)</label>
+														<input type="number" class="email form-control" id="duration" placeholder="5" required data-error="Please enter expected return" onkeyup="calculateProfit()">
+														<div class="help-block with-errors"></div>
+													</div> 
+													<div class="col-md-12 col-sm-12 col-xs-12">
+													<div class="inner-form-text">
+														<div class="rate-text">
+															<span> <strong>1.5%</strong> Brokerage Charges</span>
+														</div>
+													</div>
+													<button class="cale-btn">Total Profit : <span id="total"> Rs.0 </span></button>
+													<div class="terms-text">
+														<p>For more information refer our <a href="./about.html">Terms & Policy</a></p>
+													</div>		
+												   </div>	
+												</form>  
+											</div>
+											
+										
+                                            </div>
+                                        </div>
+                                   </div>
+                                </div> 
+								
+								
+								
+                            </div>
+						</div>
+					</div>
+				</div>
+            </div>
+		</div>
+		<!-- End Slider Area -->
+        <!-- Start About Area -->
+        <div class="about-area bg-color fix area-padding">
+            <div class="container">
+               <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+                            <h3>Why Choose Frankin Mutual Fund</h3>
+                            <p>Come join our growing family of investors and give <br>shape to your desires.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="support-all">
+                        <!-- Start services -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="support-services wow ">
+                                <a class="support-images" href="#"><i class="flaticon-like-2"></i></a>
+                                <div class="support-content">
+                                    <h4>Smart Fund Management</h4>
+                                    <p>Our blockchain enabled platform is adding a greater value to our asset management services in terms of seamless portfolio management with smart strategies.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start services -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="support-services ">
+                                <a class="support-images" href="#"><i class="flaticon-transfer-3"></i></a>
+                                <div class="support-content">
+                                    <h4>Realtime Ledger</h4>
+                                    <p>Realtime shared ledger and instant settlement of transactions will drive our customers to actively participate in the investment cycle</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start services -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="support-services ">
+                                <a class="support-images" href="#"><i class="flaticon-user-4"></i></a>
+                                <div class="support-content">
+                                    <h4>Live Support</h4>
+                                    <p>Our dedicated customer support team and live chat feature will always be available 24*7 to address your financial concerns instantly.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Start services -->
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="support-services">
+                                <a class="support-images" href="#"><i class="flaticon-padlock"></i></a>
+                                <div class="support-content">
+                                    <h4>Safe & Secure</h4>
+                                    <p>Transactions will execute exactly as programmed, without the possibility to alter the process, which is completely reliable as the ledger is immutable and irrevocable.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="about-contact text-center">
+                                <div class="about-btn">
+                                    <a class="ab-btn left-ab-btn" rel="relativeanchor" href="#how-it-works">How it Works</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End About Area -->
+        <!-- Core feature start -->
+        <div class="core-feature-area bg-color area-padding-2" id="services-section">
+            <div class="container">
+               <div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="section-headline text-center">
+                            <h3>Goal Based Financial Planning</h3>
+                            <p>Here you can explore from a variety of mutual funds ranging between equity funds, debt funds and hybrid funds.</p>
+						</div>
+					</div>
+				</div>
+                <div class="row">
+                    <div class="all-core-feature">
+                        <!-- single-well end-->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="core-feature ">
+                                <div class="core-img">
+                                    <span class="core-icon" href="#"><i class="flaticon-dollar-symbol"></i></span>
+                                </div>
+                                <div class="main-core">
+                                    <div class="core-content">
+                                        <h4>Tax Planning</h4>
+                                        <p>Save tax and build wealth with our ELSS fund</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="core-feature ">
+                                <div class="core-img">
+                                    <span class="core-icon" href="#"><i class="flaticon-user-8"></i></span>
+                                </div>
+                                <div class="main-core">
+                                    <div class="core-content">
+                                        <h4>Child Education</h4>
+                                        <p>Take small investment steps towards your child's education</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="core-feature ">
+                                <div class="core-img">
+                                    <span class="core-icon" href="#"><i class="flaticon-piggy-bank"></i></span>
+                                </div>
+                                <div class="main-core">
+                                    <div class="core-content">
+                                        <h4>Systematic Investment</h4>
+                                        <p>Invest regularly and build long-term wealth</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="core-feature ">
+                                <div class="core-img">
+                                    <span class="core-icon" href="#"><i class="flaticon-team-2"></i></span>
+                                </div>
+                                <div class="main-core">
+                                    <div class="core-content">
+                                        <h4> Early Retirement</h4>
+                                        <p>Plan early for a comfortable retirement</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-offset-3 col-md-3 col-sm-6 col-xs-12">
+                            <div class="core-feature ">
+                                <div class="core-img">
+                                    <span class="core-icon" href="#"><i class="flaticon-pie-chart"></i></span>
+                                </div>
+                                <div class="main-core">
+                                    <div class="core-content">
+                                        <h4>Wealth Creation</h4>
+                                        <p>Start small and create wealth over long-term.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="core-feature ">
+                                <div class="core-img">
+                                    <span class="core-icon" href="#"><i class="flaticon-transfer-3"></i></span>
+                                </div>
+                                <div class="main-core">
+                                    <div class="core-content">
+                                        <h4>Regular Cash Flow</h4>
+                                        <p>Make the most of your investment with our SWP</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Core feature End -->
+        <!-- Start How to area -->
+        <div class="how-to-area how-to-area-2 bg-color area-padding" id="how-it-works">
+            <div class="container">
+                <div class="row">
+                    <div class="all-services">
+                        <!-- single-well end-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="well-services first-item wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="well-img">
+                                    <a class="big-icon" href="#"><i class="flaticon-user-12"></i></a>
+                                </div>
+                                <div class="main-wel">
+                                    <div class="wel-content">
+                                        <h4><span>01.</span>Create an account</h4>
+                                        <p>Create your bank account online instantly with your basic details </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="well-services wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="well-img">
+                                    <a class="big-icon" href="#"><i class="flaticon-worldwide"></i></a>
+                                </div>
+                                <div class="main-wel">
+                                    <div class="wel-content">
+                                        <h4><span>02.</span>Verify KYC</h4>
+                                        <p>Mutual Fund KYC is mandatory for all Mutual Fund investments</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <div class="well-services thired-item wow fadeInUp" data-wow-delay="0.7s">
+                                <div class="well-img">
+                                    <a class="big-icon" href="#"><i class="flaticon-building"></i></a>
+                                </div>
+                                <div class="main-wel">
+                                    <div class="wel-content">
+                                        <h4><span>03.</span>Invest Money</h4>
+                                        <p>Start your investment journey with smart fund management technology</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single-well end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End How to area -->
+        <!-- Start Feature Area -->
+        <div class="feature-area fix area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 hidden-xs">
+                        <div class="feature-text">
+                            <h3>Mutual Fund Investment for Child Education</h3>
+						    <p>Saving for your child’s future (be it higher education or marriage etc.) is directly proportional to the regular contributions that you make towards this goal. Your role as a parent is to be prepared and support them emotionally and financially.</p>
+                            <p>Your current lifestyle will have a deeper impact on the choice you make, where you prefer to send your child for higher education, expenses on marriage etc. Do take into consideration the inflation while planning how much to save for securing your child’s future.</p>
+							
+							<ul>
+                               <li><a href="#">Be prepared to fulfil your child’s dream</a></li>
+                                <li><a href="#">Take advantage of power of compounding</a></li>
+                                <li><a href="#">Aim to invest in right options</a></li>
+								 <li><a href="#">Plan the best education for your Children</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="feature-content">
+                            <div class="feature-images">
+                                <img src="./assets/images/feature/child-education.jpg" alt="Child Education">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden-md hidden-lg hidden-sm col-xs-12">
+                        <div class="feature-text">
+                            <h3>Mutual Fund Investment for Child Education</h3>
+						    <p>Saving for your child’s future (be it higher education or marriage etc.) is directly proportional to the regular contributions that you make towards this goal. Your role as a parent is to be prepared and support them emotionally and financially.</p>
+                            <p>Your current lifestyle will have a deeper impact on the choice you make, where you prefer to send your child for higher education, expenses on marriage etc. Do take into consideration the inflation while planning how much to save for securing your child’s future.</p>
+							
+							<ul>
+                               <li><a href="#">Be prepared to fulfil your child’s dream</a></li>
+                                <li><a href="#">Take advantage of power of compounding</a></li>
+                                <li><a href="#">Aim to invest in right options</a></li>
+								 <li><a href="#">Plan the best education for your Children</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- End Feature Area -->
+		 
+		 <!-- Start Brand Area -->
+        <div class="overview-area bg-color area-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="overview-content">
+                            <img src="./assets/images/about/ab.jpg" alt="">
+                        </div>
+                    </div>  
+                   <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="overview-text">
+                            <h3>Small investments for bigger dreams</h3>
+						    <p>SIP or Systematic Investment Plan is a plan through which a person can invest a small amount in a mutual fund at regular intervals (monthly/quarterly).SIP averages your investment cost over the investment duration and gives the flexibility of choosing your own amount and frequency, making it an ideal investment option for any investor.</p>
+                             <p>Since your investment amount gets broken down in equal instalments, your investments average out the market ups and downs resulting in averaging your cost.</p>
+                         </div>
+                    </div> 					
+                </div>
+            </div>
+        </div>
+        <!-- End Banner Area -->
+
+    
+
+		
+       
+        <!-- Start Banner Area -->
+        <div class="banner-area area-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="banner-all area-80 text-center">
+                            <div class="banner-content">
+                                <h3>Are you ready to begin your smart<br> investment journey? </h3>
+                                <a class="banner-btn" onclick="signUp()" href="javascript:void(0)">Open new account</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Banner Area -->
+		
+		
+		
+        <!-- Start Footer Area -->
+        <footer class="footer-1">
+            <div class="footer-area-bottom">
+                <div class="container">
+                    <div class="row">
+					<center>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="copyright">
+                                <p>
+                                    Copyright © 2020
+                                    <a href="./">Frankin</a> All Rights Reserved
+                                </p>
+                            </div>
+                        </div>
+					</center>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer Area -->
+		
+		<!-- all js here -->
+
+		<!-- jquery latest version -->
+		<script src="./assets/js/jquery-1.12.4.min.js"></script>
+		<!-- bootstrap js -->
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<!-- stellar js -->
+        <script src="./assets/js/jquery.stellar.min.js"></script>
+		<!-- magnific js -->
+        <script src="./assets/js/magnific.min.js"></script>
+        <!-- meanmenu js -->
+        <script src="./assets/js/jquery.meanmenu.js"></script>
+		<!-- plugins js -->
+		<script src="./assets/js/plugins.js"></script>
+		<!-- main js -->
+		<script src="./assets/js/main.js"></script>
+		<script src="assets/js/msal-auth.js"></script>
+
+	</body>
+
+</html>

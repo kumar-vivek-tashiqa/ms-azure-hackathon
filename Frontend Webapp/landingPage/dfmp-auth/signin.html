@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" class="login-pf">
+
+<head>
+    <title>Verify KYC - Sign In</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Enterprise trusts Tashiqa for AI powered solutions. We help you to maintain quality customer data, increase conversion rates and drive business efficiency">
+    <meta name="keywords" content="ai startup, tashiqa ai, tashiqa, ai platform, artificial intelligence, machine learning, vision ai, text ai, enterprise ai, text summarization api, ai consultant, information technology, insight, tashiqa ai platform, universal ai open source, open source ai, label identification, sentiment analysis, keyword identification, brand detection, text summarization, quality customer data" />
+    <meta name="author" content="Tashiqa">
+    <meta name="rating" content="general" />
+    <meta name="application-name" content="Tashiqa" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Language" content="en_in" />
+
+    <meta property="og:title" content="Tashiqa" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://tashiqa.com./assets/images/logos/tashiqa-color-logo.svg" />
+    <meta property="og:url" content="https://tashiqa.com/?utm_source=FBLIKE" />
+    <meta property="og:site_name" content="Tashiqa" />
+
+    <link rel="canonical" href="https://tashiqa.com/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@tashiqa" />
+    <meta name="twitter:title" content="Innovating For Humans - Tashiqa">
+    <meta name="twitter:description" content="ai startup, tashiqa ai, tashiqa, ai platform, artificial intelligence, machine learning, vision ai, text ai, enterprise ai, text summarization api, ai consultant, information technology, insight, tashiqa ai platform, universal ai open source, open source ai, label identification, sentiment analysis, keyword identification, brand detection, text summarization, quality customer data" />
+    <meta name="twitter:image" content="https://tashiqa.web.app/dfmp-auth/assets/img/logos/tashiqa-color-logo.svg" />
+    <meta name="twitter:url" content="tashiqa.com" />
+
+    <link href="https://tashiqa.web.app/dfmp-auth/assets/img/logos/favicon.png" rel="icon" type="image/png">
+
+    <!-- For Knowledge Graph Starts-->
+    <script type="application/ld+json">
+        { "@context": "http://schema.org", "@type": "WebSite", "name" : "Tashiqa", "url": "https://tashiqa.com/" }
+    </script>
+    <script type="application/ld+json">
+        { "@context": "http://schema.org", "@type": "Organization", "url": "https://tashiqa.com/", "logo": "https://tashiqa.com./assets/images/logos/tashiqa-color-logo.svg", "name" : "Tashiqa", "sameAs" : [ "https://www.facebook.com/thetashiqa/", "https://twitter.com/TheTashiqa", "https://www.linkedin.com/company/tashiqa/", "https://blog.tashiqa.com/" ], "contactPoint" : [{ "@type" : "ContactPoint", "telephone" : "+91 9113648461", "contactType" : "customer service", "areaServed" : "IN", "availableLanguage" : ["English", "Deutsch", "Hindi", "Kannada"] }] }
+    </script>
+    <!-- For Knowledge Graph Ends -->
+    <script src="https://tashiqa.web.app/dfmp-auth/assets/js/jquery.min.js"></script>
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Google+Sans:100,200,300,400);
+        body {
+            background: #fff;
+            direction: ltr;
+            font-size: 14px;
+            line-height: 1.4286;
+            color: #212121;
+            font-family: 'Google Sans', Arial , sans-serif;
+            display: block;
+            background-image: url(https://tashiqa.web.app/dfmp-auth/assets/img/bg.png);
+            background-position: bottom;
+            background-repeat: no-repeat;
+            margin: 0;
+            height: 100%;
+            background-size: 100% auto
+        }
+        
+        html {
+            height: 100%
+        }
+        
+        .alert-error {
+            background-color: #fff;
+            border-color: #c00;
+            color: #333
+        }
+        
+        #kc-locale ul {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            list-style: none;
+            right: 0;
+            top: 20px;
+            min-width: 90px;
+            padding: 2px 0;
+            border: solid 1px #bbb
+        }
+        
+        #kc-locale:hover ul {
+            display: block;
+            margin: 0
+        }
+        
+        #kc-locale ul li a {
+            display: block;
+            padding: 5px 21px;
+            color: #000!important;
+            text-decoration: none;
+            text-align: left;
+            line-height: 20px
+        }
+        
+        #kc-locale ul li a:hover {
+            color: #4d5258;
+            background-color: #d4edfa;
+            width: auto;
+        }
+        
+        #kc-locale-dropdown a {
+            color: #4d5258;
+            background: 0 0;
+            padding: 0 15px 0 0;
+            font-weight: 300
+        }
+        
+        #kc-locale-dropdown a:hover {
+            text-decoration: none
+        }
+        
+        a#kc-current-locale-link {
+            display: block;
+            padding: 0 5px
+        }
+        
+        a#kc-current-locale-link::after {
+            content: "\2c5";
+            margin-left: 4px
+        }
+        
+        .login-pf .container {
+            padding-top: 40px
+        }
+        
+        .login-pf a:hover {
+            color: #0099d3
+        }
+        
+        #kc-logo {
+            width: 100%
+        }
+        
+        .signin-main-container {
+            flex-shrink: 0;
+            background: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+            display: inline-block;
+            box-sizing: border-box;
+            max-width: 100%;
+            position: relative;
+            z-index: 2;
+            width: 410px;
+            flex-direction: column;
+            margin-top: auto;
+            margin-bottom: auto;
+            border: 1px solid #e4e4e4;
+            border-radius: 7px
+        }
+        
+        .card-container {
+            width: auto;
+            vertical-align: middle;
+            margin: auto
+        }
+        
+        .block-ui-spinner>* {
+            opacity: .5
+        }
+        
+        .block-ui-spinner::before {
+            content: '';
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            background-size: 20px auto;
+            background: url(https://tashiqa.web.app/dfmp-auth/assets/img/rolling.gif) center no-repeat
+        }
+        
+        .signin-content {
+            min-height: 445px;
+            overflow-y: auto;
+            padding: 48px 40px 36px;
+            -webkit-box-flex: 1;
+            flex-grow: 1
+        }
+        
+        .image-container {
+            height: 37px;
+            margin: 0 auto;
+            overflow: visible;
+            position: relative;
+            width: 136px
+        }
+        
+        .title {
+            margin-top: 7px
+        }
+        
+        .title-heading {
+            padding-bottom: 0;
+            margin: 0 auto;
+            font-size: 23px;
+            font-weight: 400;
+            line-height: 32px;
+            text-align: center
+        }
+        
+        .title-subheading {
+            padding-bottom: 3px;
+            padding-top: 5px;
+            margin: 0 auto;
+            display: block;
+            text-align: center
+        }
+        
+        a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1a73e8;
+            line-height: 1.4286
+        }
+        
+        .linka {
+            margin-top: 40px
+        }
+        
+        .signin-place {
+            margin-top: 20px;
+            margin-bottom: 25px
+        }
+        
+        .buttons {
+            font-size: 14px;
+            white-space: normal;
+            align-items: center;
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 15px;
+            min-height: 48px;
+            margin-bottom: 15px;
+            margin-right: 25px;
+        }
+        
+        .signin-place input {
+            font-size: 15px;
+            padding: 9px;
+            border-radius: 5px;
+            border: 1.5px solid #ccc;
+            width: 100%;
+            background-color: white
+        }
+        
+        .signin-place input:focus {
+            outline: none;
+            border: 1.5px solid #1a73e8;
+            background-color: white
+        }
+        
+        .button {
+            float: right;
+            background: #4285f4;
+            color: white;
+            display: block
+        }
+        
+        .edit_button {
+            float: right;
+            margin: 8px;
+            line-height: 34px;
+            min-width: 88px;
+            padding: 0 12px;
+            background-image: radial-gradient(circle farthest-side, #3367d6, #3367d6 80%, rgba(51, 103, 214, 0) 100%);
+            background: #4285f4;
+            color: #fff;
+            -webkit-user-select: none;
+            -webkit-transition: background .2s .1s;
+            transition: background .2s .1s;
+            border: 0;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 500;
+            min-width: 4em;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            -webkit-tap-highlight-color: transparent
+        }
+        
+        .lala {
+            margin-top: 30px;
+            min-height: 48px
+        }
+        
+        .signin-main-footer {
+            height: 16.8px;
+            padding: 15px 10px;
+            position: relative;
+            width: auto;
+            justify-content: space-between;
+            font-size: 12px;
+            line-height: 1.4
+        }
+        
+        .leftsa {
+            color: black;
+            height: 16.8px;
+            display: block;
+            width: auto;
+            display: inline-block
+        }
+        
+        .right-footer {
+            list-style: none;
+            float: right;
+            display: inline-block;
+            padding: 0;
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0
+        }
+        
+        .right-footer a {
+            color: #757575;
+            padding: 6px 16px;
+            font-size: 12px;
+            line-height: 1.4
+        }
+        
+        .alert {
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            width: 46vh;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 5
+        }
+        
+        .line {
+            text-align: center
+        }
+        
+        @media (min-width: 768px) {
+            #kc-locale {
+                position: relative;
+                text-align: left;
+                z-index: 9999
+            }
+        }
+        
+        @media (max-width: 767px) {
+            #kc-locale {
+                position: absolute;
+                width: 200px;
+                top: 40px;
+                right: 20px;
+                text-align: right;
+                z-index: 9999
+            }
+        }
+        
+        .divider {
+            display: none;
+        }
+        
+        a#createAccount {
+            margin-left: 5px;
+        }
+        
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 28px;
+        }
+        
+        ul {
+            padding-left: 0px;
+            margin-bottom: 0px;
+        }
+        
+        #logonIdentifier {
+            width: 91.5%;
+            color: #212121;
+        }
+        
+        #password {
+            width: 91.5%;
+            margin-top: 32px;
+        }
+        
+        .buttons {
+            justify-content: center;
+            margin-top: 45px;
+            margin-right: 0px;
+        }
+        
+        .entry-item {
+            margin-bottom: 25px;
+        }
+        
+        #forgotPassword {
+            position: absolute;
+            margin-top: 40px;
+            margin-left: 175px;
+        }
+        
+        .create {
+            text-align: center;
+        }
+        
+        .textInput.invalid,
+        input.error, .highlightError {
+            border-radius: 4px;
+            outline: none;
+            transition: background-color .1s ease-in, color .1s ease-in;
+            background-image: url(https://tashiqa.web.app/assets/images/icons/validation-error.svg);
+            background-repeat: no-repeat;
+            background-position-y: 9px;
+            background-size: 20px 20px;
+            background-position: right;
+            background-position-x: calc(100% - 12px);
+            border: 0.4px solid #ffa27b;
+            box-shadow: 0 0 0 0.5px #ffa27b;
+        }
+        
+        .page-loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('https://tashiqa.web.app/dfmp-auth/assets/img/rolling.gif') 50% 50% no-repeat rgb(249, 249, 249);
+            opacity: .8;
+        }
+        
+        label {
+            display: none;
+        }
+        
+        .error {
+            color: #ef862c;
+            outline: none;
+            margin-top: 5px;
+        }
+
+        
+        body {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        * {
+            outline: none;
+        }
+        
+        .main-container {
+            margin: auto;
+            width: auto
+        }
+        
+        .header {
+            height: 50px
+        }
+        
+        input {
+            font-size: 15px;
+            padding: 9px;
+            border-radius: 5px;
+            border: 1.5px solid #ccc;
+            width: 84%;
+            margin-right: 15px;
+            display: inherit;
+            background-color: white
+        }
+        
+        input:focus {
+            outline: none;
+            border: 1.5px solid #1a73e8;
+            background-color: white
+        }
+        
+        .content {
+            display: flex;
+            border: 1px solid #e4e4e4;
+            border-radius: 5px;
+            padding: 42px 0 25px;
+            background: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2)
+        }
+        
+        .content .left {
+            display: flex;
+            flex-direction: column;
+            padding: 0 0 0 28px;
+            width: 100%
+        }
+        
+        .content .left .name {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 22px
+        }
+        
+        .content .left .name input {
+            width: 47%
+        }
+        
+        .content .left .create-account {
+            font-size: 25px;
+            padding-top: 15px;
+            padding-bottom: 12px
+        }
+        
+        .content .left .username {
+            margin-bottom: 25px
+        }
+        
+        .content .left .username-line {
+            font-size: 13px;
+            padding: 10px 0
+        }
+        
+        .content .left .use-current-email {
+            font-size: 13px;
+            font-weight: 500
+        }
+        
+        .content .left .use-current-email a {
+            text-decoration: none;
+            color: #1a73e8
+        }
+        
+        .content .left .password {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px
+        }
+        
+        .content .left .password input {
+            width: 47%
+        }
+        
+        .password-line {
+            font-size: 12px;
+            width: 92%;
+            padding-bottom: 30px
+        }
+        
+        .content .left .content-footer {
+            display: flex;
+            align-items: center;
+            margin-top: -45px;
+            justify-content: space-between
+        }
+        
+        .content .left .content-footer .sign-in {
+            font-size: 14px;
+            color: #1a73e8;
+            font-weight: 500
+        }
+        
+        .content .left .content-footer .sign-in a {
+            font-size: 14px;
+            color: #1a73e8;
+            font-weight: 500;
+            text-decoration: none
+        }
+        
+        .content .left .content-footer .sign-in a:hover {
+            font-size: 14px;
+            color: #1a73e8;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        button {
+            background-color: #1192f6;
+            color: white;
+            height: 37px;
+            padding: 10px 18px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 500;
+            float: right;
+            font-family: inherit;
+            font-size: 14px;
+            text-transform: uppercase;
+            outline: none;
+            cursor: pointer
+        }
+        
+        button:hover {
+            background-color: #1a73e8;
+            border-color: #0a8cf0;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-weight: 500;
+            float: right;
+            font-family: inherit;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer
+        }
+        
+        button:not(:disabled):not(.disabled):active:focus {
+            -webkit-box-shadow: 0 0 0 .2rem rgba(54, 163, 247, .5);
+            opacity: 1;
+            box-shadow: 0 0 0 .2rem rgba(54, 163, 247, .5)
+        }
+        
+        button:disabled {
+            opacity: 0.5;
+        }
+        
+        .content .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 30px 0 0
+        }
+        
+        .content .right .image-line {
+            font-size: 16px;
+            width: 234px;
+            text-align: center;
+            line-height: 23px;
+            color: gray
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px;
+            margin-top: 14px;
+            background-color: white;
+            border: 1px solid #e4e4e4;
+            border-radius: 7px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2)
+        }
+        
+        .footer .languages {
+            font-size: 12px
+        }
+        
+        .footer a {
+            padding-left: 24px;
+            text-decoration: none;
+            color: gray;
+            font-size: 12px;
+            font-weight: 500
+        }
+        
+        #kc-locale ul {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            list-style: none;
+            right: 0;
+            top: auto;
+            bottom: 0;
+            max-width: 85px;
+            max-height: 250px;
+            overflow: auto;
+            padding: 5px 0;
+            border: 1px solid #e4e4e4;
+            border-radius: 5px;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2)
+        }
+        
+        #kc-locale ul li a:hover {
+            background-color: #e4e4e4
+        }
+        
+        @media (max-width: 767px) {
+            #kc-locale {
+                position: relative;
+                width: auto;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                text-align: right;
+                z-index: 9999
+            }
+        }
+        
+        @media screen and (orientation: portrait) and (max-width: 550px) {
+            .content .left {
+                width: 100%
+            }
+            .content .right {
+                display: none
+            }
+            #attributeList {
+                width: auto;
+            }
+        }
+        
+        #cancel {
+            display: none;
+        }
+        
+        #email_ver_input_label {
+            visibility: hidden;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+            background-color: #F5F5F5;
+            overflow-x: auto
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: gray;
+            overflow-x: auto
+        }
+        
+        .container {
+            width: 38%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background: #FFF;
+            padding: 1em 2em
+        }
+        
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 80%
+            }
+            .heading span {
+                display: none
+            }
+        }
+        
+        #kc-error-message {
+            width: auto;
+            vertical-align: middle;
+            margin: auto
+        }
+        
+        #title {
+            text-transform: capitalize
+        }
+        
+        a.helpLink.tiny,
+        .intro {
+            display: none;
+        }
+        
+        #attributeList {
+            width: 480px;
+        }
+        
+        #email {
+            width: 91.5%;
+        }
+        
+        .EmailBox {
+            display: block;
+            margin-bottom: 0px;
+        }
+        
+        .error.itemLevel {
+            width: auto;
+            position: absolute;
+            color: #ef862c;
+            outline: none;
+            margin-top: 26px;
+        }
+        
+        .error.pageLevel {
+            color: #ef862c;
+            outline: none;
+            text-align: center;
+        }
+        
+        .error.itemLevel.show {
+            width: auto;
+            position: absolute;
+            color: #ef862c;
+            outline: none;
+            margin-top: 40px;
+        }
+        
+        .Password.error.itemLevel.show {
+            width: 220px;
+            position: absolute;
+            color: #ef862c;
+            outline: none;
+            margin-top: 40px;
+        }
+        
+        .verificationErrorText.error {
+            width: 250px;
+            position: absolute;
+            color: #ef862c;
+            outline: none;
+            margin-top: 127px;
+        }
+        
+        li:nth-child(3) {
+            display: block;
+            margin-bottom: 0px;
+        }
+        
+        #kc-locale li {
+            display: unset;
+            margin-right: unset;
+            margin-bottom: unset;
+        }
+        
+        @media screen and (orientation: portrait) {
+            .content .left {
+                width: 100%
+            }
+            .create-account {
+                width: 89%;
+            }
+            #attributeList {
+                width: auto;
+            }
+            #email {
+                width: 84%;
+            }
+            li {
+                display: block;
+            }
+            li:nth-child(5) {
+                margin-top: 42px;
+            }
+            .error.itemLevel.show {
+                width: auto;
+            }
+        }
+        
+        .textInput.invalid:focus,
+        input.error:focus {
+            outline: none;
+            border-radius: 4px;
+            border: 0.4px solid #ffa27b;
+            background-color: white
+        }
+        
+        .error-page-messagedetails {
+            margin-top: 20px;
+        }
+        
+        #email_ver_input {
+            width: auto;
+        }
+        
+        .buttons.verify {
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+        
+        #email_ver_but_resend,
+        #email_ver_but_verify {
+            margin-top: 27px;
+        }
+        
+        .Password {
+            margin-top: 10px;
+        }
+        
+        @media screen and (max-width: 450px) and (orientation: portrait) {
+            .footer,
+            .signin-main-container,
+            .content {
+                border: none;
+                border-radius: unset;
+                box-shadow: unset;
+                background-color: unset;
+            }
+            body {
+                display: unset;
+                background-image: unset;
+            }
+            #forgotPassword {
+                margin-left: 135px;
+            }
+        }
+        
+        .right img {
+            margin-left: 26px;
+        }
+        
+        #email_ver_wait {
+            text-align: center;
+            margin: auto;
+        }
+        
+        #email_success {
+            color: #3ecf8e;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        
+        #email_fail_retry {
+            text-align: center;
+            width: auto;
+            position: relative;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-loader"></div>
+    <div class="main-container">
+        <br>
+        <div class="card-container">
+            <div class="signin-main-container">
+                <div id="signin-content" class="signin-content">
+                    <br>
+                    <div class="image-container">
+                        <img src="https://tashiqa.web.app/dfmp-auth/assets/img/dfmp-verifier-logo.png" width="142">
+                    </div>
+					<br>
+                    <div class="title">
+                        <h1 class="title-heading"><span id="title-heading">Sign In</span></h1>
+                        <p class="title-subheading"><span id="title-subheading">Sign in to</span> <span id="app-name">Tashiqa</span></p>
+                    </div>
+                    <br>
+
+                    <div id="api"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="languages">
+
+                <div id="kc-locale">
+                    <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
+                        <div class="kc-dropdown" id="kc-locale-dropdown">
+                            <a href="#" target="_blank" id="kc-current-locale-link">English</a>
+                            <ul>
+                                <li class="kc-dropdown-item"><a onclick="changeLang('en')" href="javascript:;">English</a></li>
+                                <li class="kc-dropdown-item"><a onclick="changeLang('de')" href="javascript:;">Deutsch</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="links">
+                <a href="https://tashiqa.web.app/dfmp-auth/about.html" target="_blank" id="help">Help</a>
+                <a href="https://tashiqa.web.app/dfmp-auth/about.html" target="_blank" id="privacy">Privacy</a>
+                <a href="https://tashiqa.web.app/dfmp-auth/about.html" target="_blank" id="terms">Terms</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Page Scripts -->
+    <script src="https://tashiqa.web.app/dfmp-auth/assets/js/common-module.js"></script>
+    <script src="https://tashiqa.web.app/dfmp-auth/assets/js/signin.js"></script>
+</body>
+
+</html>

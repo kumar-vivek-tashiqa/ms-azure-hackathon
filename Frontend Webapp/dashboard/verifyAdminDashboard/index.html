@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Tashiqa" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="@@page-discription" />
+        <link rel="shortcut icon" href="./assets/images/verify-kyc-admin/favicon.png" />
+        <title>Pending Requests - Verify KYC</title>
+		
+        <link rel="stylesheet" href="./assets/css/style.css" />
+		<link href="./assets/css/toastr.css" rel="stylesheet"/>
+	
+        
+    </head>
+    <body class="nk-body npc-invest bg-lighter">
+	
+	    <div id="preloader"></div>
+        <div class="nk-app-root hide">
+            <div class="nk-wrap">
+			
+			
+                <div class="nk-header nk-header-fluid is-light">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger mr-sm-2 d-lg-none">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
+                            </div>
+                            <div class="nk-header-brand">
+                                <a href="./index.html" class="logo-link">
+                                    <img class="logo-light logo-img logo-img-md" src="./assets/images/verify-kyc-admin/logo.png"  alt="Verify KYC Logo" />
+                                    <img class="logo-dark logo-img logo-img-md" src="./assets/images/verify-kyc-admin/logo-dark.png"  alt="Verify KYC Logo Dark" />
+                                </a>
+                            </div>
+                            <div class="nk-header-menu" data-content="headerNav">
+                                <div class="nk-header-mobile">
+                                    <div class="nk-header-brand">
+                                        <a href="./index.html" class="logo-link">
+                                            <img class="logo-light logo-img logo-img-md" src="./assets/images/verify-kyc-admin/logo.png"  alt="Verify KYC Logo" />
+                                            <img class="logo-dark logo-img logo-img-md" src="./assets/images/verify-kyc-admin/logo-dark.png"  alt="Verify KYC Logo Dark" />
+                                        </a>
+                                    </div>
+                                    <div class="nk-menu-trigger mr-n2">
+                                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-arrow-left"></em></a>
+                                    </div>
+                                </div>
+                                <ul class="nk-menu nk-menu-main">
+                                    <li class="nk-menu-item active current-page">
+                                        <a href="index.html" class="nk-menu-link"><span class="nk-menu-text">Pending</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="approved-users.html" class="nk-menu-link"><span class="nk-menu-text">Approved</span></a>
+                                    </li>
+									<li class="nk-menu-item">
+                                        <a href="rejected-users.html" class="nk-menu-link"><span class="nk-menu-text">Rejected</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="profile.html" class="nk-menu-link"><span class="nk-menu-text">Profile</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">
+                                    <li class="hide-mb-sm">
+                                        <a href="javascript:;" class="nk-quick-nav-icon signout"><em class="icon ni ni-signout"></em></a>
+                                    </li>
+                                    <li class="dropdown user-dropdown order-sm-first">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar bg-warning"><span>RK</span></div>
+                                                <div class="user-info d-none d-xl-block">
+                                                    <div class="user-status user-status-verified">KYC Administrator</div>
+                                                    <div class="user-name dropdown-indicator">Rajesh Kumar</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1 is-light">
+                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                <div class="user-card">
+                                                    <div class="user-avatar bg-warning"><span>RK</span></div>
+                                                    <div class="user-info"><span class="lead-text">Rajesh Kumar</span><span class="sub-text">rajeshkumae@verifykyc.com</span></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li>
+                                                        <a href="profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li>
+                                                        <a href="javascript:;" class="signout"><em class="icon ni ni-signout"></em><span>Sign out</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+
+				
+				
+				<div class="nk-content nk-content-lg nk-content-fluid">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <div class="nk-block-head">
+                                    <div class="nk-block-head-content">
+                                        <div class="nk-block-head-sub"><span>Verify Users</span></div>
+                                        <div class="nk-block-between-md g-4">
+                                            <div class="nk-block-head-content">
+                                                <h2 class="nk-block-title fw-normal">Pending Requests</h2>
+                                                <div class="nk-block-des"><p>Verify pending KYC requests.</p></div>
+                                            </div>
+                                            <div class="nk-block-head-content hide">
+                                                <ul class="nk-block-tools gx-3">
+                                                    <li>
+                                                        <a href="#" class="btn btn-white btn-outline-light"><em class="icon ni ni-download-cloud"></em><span>Export</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								
+								  <div class="nk-block" id="datatable-container">
+                                        <div class="card card-bordered card-stretch">
+                                            <div class="card-inner-group">
+                                                <div class="card-inner position-relative">
+                                                    <div class="card-title-group">
+													
+                                                     <div class="col-lg-4 col-md-6 col-sm-6" style="float:right;">
+                                                        <div class="m-input-icon m-input-icon--left">
+                                                            <input type="text" class="form-control m-input" placeholder="Search For Users..." id="userGeneralSearch">
+                                                            <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                <span><i class="la la-search"></i></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+													 <div class="col-lg-2 col-md-2">													 
+													    
+													 </div>
+
+                                                    <div class="col-lg-4 col-md-4">	
+													
+                                                        <div class="m-form__group m-form__group--inline hide" style="display:none;">
+														
+														    <div class="m-form__label">
+																<label class="m-label m-label--single">Status:</label>
+															</div>
+														
+                                                            <div class="m-form__control">														
+                                                                <select class="form-control m-select2" id="m_form_status">
+                                                                    <option value="">All Requests</option>
+                                                                    <option value="verified">Approved Requests </option>
+                                                                    <option value="rejected">Rejected Requests </option>
+                                                                    <option value="pending">Pending Requests </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+													
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="card-inner p-0">
+                                                   
+													<!--begin: Datatable -->
+													<div class="m_datatable" id="user_kyc_data"></div>
+													<!--end: Datatable -->
+												   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+							
+							
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+				
+				
+				<div class="modal fade" tabindex="-1" id="userDetails">
+				<div class="modal-dialog modal-xl" role="document">
+					<div class="modal-content">
+						<a href="#" class="close" data-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
+						<div class="modal-body modal-body-md">
+							
+						<br>
+						
+						<div class="block-ui-spinner" id="userDetailsLoader">
+						
+						</div>
+						
+                        <div class="container-fluid hide" id="userDetailsContainer">
+                            <div class="nk-content-inner">
+                                <div class="nk-content-body">
+                                    <div class="nk-block-head nk-block-head-sm">
+                                        <div class="nk-block-between g-3">
+                                            <div class="nk-block-head-content">
+                                                <h3 class="nk-block-title page-title">KYC Details - <strong class="text-primary small"><span class="fullName"></span></strong></h3>
+                                                <div class="nk-block-des text-soft">
+                                                    <ul class="list-inline">
+                                                        <li>Application ID: <span class="text-base" id="kycId"></span></li>
+                                                        <li>Submited At: <span class="text-base submittedAt"></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="nk-block">
+                                        <div class="row gy-5">
+                                            <div class="col-lg-5">
+                                                <div class="nk-block-head">
+                                                    <div class="nk-block-head-content">
+                                                        <h5 class="nk-block-title title">Application Info</h5>
+                                                        <p>Submission date, approve date, status etc.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card card-bordered">
+                                                    <ul class="data-list is-compact">
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Submitted By</div>
+                                                                <div class="data-value"><span class="fullName"></span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Submitted At</div>
+                                                                <div class="data-value"><span class="submittedAt"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														<li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">PAN Number</div>
+                                                                <div class="data-value" id="panNumber"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Status</div>
+                                                                <div class="data-value"><span class="badge badge-dim badge-sm badge-outline-success" id="kycStatus">Approved</span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Last Checked</div>
+                                                                <div class="data-value">
+                                                                    <div class="user-card">
+                                                                        <div class="user-avatar user-avatar-xs bg-warning"><span id="verifierIntial">RK</span></div>
+                                                                        <div class="user-name"><span class="tb-lead" id="verifierName">Rajesh Kumar</span></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Last Checked At</div>
+                                                                <div class="data-value" ><span id="updatedAt"></span></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="nk-block-head">
+                                                    <div class="nk-block-head-content">
+                                                        <h5 class="nk-block-title title">Uploaded Documents</h5>
+                                                        <p>Here is user uploaded documents.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card card-bordered">
+                                                    <ul class="data-list is-compact">
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Document Type</div>
+                                                                <div class="data-value"><span id="documentType"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														 <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Document ID</div>
+                                                                <div class="data-value"><strong><span id="documentId"></span></strong></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Front Side Image</div>
+                                                                <div class="data-value"><div class="data-value"><a class="btn btn-secondary" href="" id="front_image_url" download><em class="icon ni ni-download text-white"></em> &nbsp;&nbsp;Download</a></div></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Back Side Image</div>
+                                                                <div class="data-value"><a class="btn btn-secondary" href="" id="back_image_url" download><em class="icon ni ni-download text-white"></em> &nbsp;&nbsp;Download</a></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7">
+                                                <div class="nk-block-head">
+                                                    <div class="nk-block-head-content">
+                                                        <h5 class="nk-block-title title">Applicant Information</h5>
+                                                        <p>Basic info, like name, phone, address, country etc.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card card-bordered">
+                                                    <ul class="data-list is-compact">
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">First Name</div>
+                                                                <div class="data-value"><span id="firstName"></span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Last Name</div>
+                                                                <div class="data-value"><span id="lastName"></span></div>
+                                                            </div>
+                                                        </li>
+														<li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Father Name</div>
+                                                                <div class="data-value"><span id="fatherName"></span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Mother Name</div>
+                                                                <div class="data-value"><span id="motherName"></span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Email Address</div>
+                                                                <div class="data-value"><span id="emailId"></span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Phone Number</div>
+                                                                <div class="data-value text-soft"><span id="phoneNumber"></span></div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Date of Birth</div>
+                                                                <div class="data-value"><span id="dob"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														 <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Gender</div>
+                                                                <div class="data-value"><span id="gender"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														 <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Marital Status</div>
+                                                                <div class="data-value"><span id="maritalStatus"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														
+														 <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Occupation Type</div>
+                                                                <div class="data-value"><span id="occupationType"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														<li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Residential Status</div>
+                                                                <div class="data-value"><span id="residentialStatus"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														<li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Address Type</div>
+                                                                <div class="data-value"><span id="addressType"></span></div>
+                                                            </div>
+                                                        </li>
+	
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Full Address</div>
+                                                                <div class="data-value"><span id="address">6516, Eldoret, Uasin Gishu, 30100</span></div>
+                                                            </div>
+                                                        </li>
+														
+														
+													  <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">City</div>
+                                                                <div class="data-value"><span id="city"></span></div>
+                                                            </div>
+                                                        </li>
+														
+														<li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">State</div>
+                                                                <div class="data-value"><span id="state"></span></div>
+                                                            </div>
+                                                        </li>
+														
+
+														
+														
+                                                        <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Country</div>
+                                                                <div class="data-value"><span id="country">Kenya</span></div>
+                                                            </div>
+                                                        </li>
+														
+														   <li class="data-item">
+                                                            <div class="data-col">
+                                                                <div class="data-label">Zip Code</div>
+                                                                <div class="data-value"><span id="zipCode"></span></div>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                 
+                                </div>
+							
+							
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			
+			</div>
+			</div>
+		</div>
+				
+				
+				
+				
+                <div class="nk-footer nk-footer-fluid bg-lighter">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright">&copy; 2020 Finaco Mutual Fund. All Rights Reserved</div>
+                            <div class="nk-footer-links">
+                                <ul class="nav nav-sm">
+                                    <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+		
+		<script src="./assets/js/vendors.bundle.js"></script>
+		<script src="./assets/js/scripts.bundle.js"></script>
+
+		<script src="./assets/js/pending-requests.js"></script>
+		<script src="./assets/js/common-module.js"></script>
+
+    </body>
+</html>

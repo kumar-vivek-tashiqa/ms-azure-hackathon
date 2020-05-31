@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en" class="js">
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Softnio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="@@page-discription" />
+        <link rel="shortcut icon" href="./assets/images/finaco/favicon.png" />
+        <title>Investment - Finaco MF</title>
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        
+    </head>
+    <body class="nk-body npc-invest bg-lighter">
+        <div class="nk-app-root">
+            <div class="nk-wrap">
+			
+			
+                <div class="nk-header nk-header-fluid is-theme">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-header-wrap">
+                            <div class="nk-menu-trigger mr-sm-2 d-lg-none">
+                                <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
+                            </div>
+                            <div class="nk-header-brand">
+                                <a href="./index.html" class="logo-link">
+                                    <img class="logo-light logo-img" src="./assets/images/finaco/logo.png"  alt="logo" />
+                                    <img class="logo-dark logo-img" src="./assets/images/finaco/logo-dark.png"  alt="logo-dark" />
+                                </a>
+                            </div>
+                            <div class="nk-header-menu" data-content="headerNav">
+                                <div class="nk-header-mobile">
+                                    <div class="nk-header-brand">
+                                        <a href="./index.html" class="logo-link">
+                                            <img class="logo-light logo-img" src="./assets/images/finaco/logo.png"  alt="logo" />
+                                            <img class="logo-dark logo-img" src="./assets/images/finaco/logo-dark.png"  alt="logo-dark" />
+                                        </a>
+                                    </div>
+                                    <div class="nk-menu-trigger mr-n2">
+                                        <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-arrow-left"></em></a>
+                                    </div>
+                                </div>
+                                <ul class="nk-menu nk-menu-main">
+                                    <li class="nk-menu-item">
+                                        <a href="./index.html" class="nk-menu-link"><span class="nk-menu-text">Portfolio</span></a>
+                                    </li>
+                                    <li class="nk-menu-item active current-page">
+                                        <a href="invest.html" class="nk-menu-link"><span class="nk-menu-text">Invest</span></a>
+                                    </li>
+									<li class="nk-menu-item">
+                                        <a href="ledger.html" class="nk-menu-link"><span class="nk-menu-text">Ledger</span></a>
+                                    </li>
+                                    <li class="nk-menu-item">
+                                        <a href="profile.html" class="nk-menu-link"><span class="nk-menu-text">Profile</span></a>
+                                    </li>
+                                </ul>
+                            </div>
+							
+							
+                             <div class="nk-header-tools">
+                                <ul class="nk-quick-nav">      
+                                    <li class="hide-mb-sm">
+                                        <a href="javascript:;" class="nk-quick-nav-icon signout"><em class="icon ni ni-signout"></em></a>
+                                    </li>
+                                    <li class="dropdown user-dropdown order-sm-first">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                            <div class="user-toggle">
+                                                <div class="user-avatar"><span class="userInitial">KV</span></div>
+                                                <div class="user-info d-none d-xl-block">
+                                                    <div class="user-status user-status-verified"><span id="userKYCStatus">KYC Verified</span></div>
+                                                    <div class="user-name dropdown-indicator"><span class="userFullName" id="userFullName">Kumar Vivek</span></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-right dropdown-menu-s1 is-light">
+                                            <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
+                                                <div class="user-card">
+                                                    <div class="user-avatar"><span class="userInitial">KV</span></div>
+                                                    <div class="user-info"><span class="lead-text" class="userFullName">Kumar Vivek</span><span class="sub-text" id="userEmailId">kumarvivek@tashiqa.com</span></div>
+                                                    <div class="user-action">
+                                                        <a class="btn btn-icon mr-n2" href="./profile.html"><em class="icon ni ni-setting"></em></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dropdown-inner user-account-info">
+                                                <h6 class="overline-title-alt">Account Balance</h6>
+                                                <div class="user-balance"><span class="userAccountBalance"></span> <small class="currency currency-usd">INR</small></div>
+                                                <div class="user-balance-sub">
+                                                    Locked <span class="userLockedBalance"><span class="currency currency-usd">INR</span></span>
+                                                </div>
+                                            </div>
+											
+										   <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li>
+                                                        <a href="profile.html"><em class="icon ni ni-user-alt"></em><span>View Profile</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="dropdown-inner">
+                                                <ul class="link-list">
+                                                    <li>
+                                                        <a href="javascript:;"><em class="icon ni ni-signout signout"></em><span>Sign out</span></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+				
+                <div class="nk-content nk-content-lg nk-content-fluid">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                
+							<div class="nk-block-head">
+                                    <div class="nk-block-head-content">
+                                        <div class="nk-block-head-sub"><span>Investment Schemes</span></div>
+                                        <div class="nk-block-between-md g-4">
+                                            <div class="nk-block-head-content">
+                                                <h2 class="nk-block-title fw-normal">Investment Schemes</h2>
+                                                <div class="nk-block-des"><p>Explore the active mutual fund plans.</p></div>
+                                            </div>
+                                            <div class="nk-block-head-content">
+                                                <ul class="nk-block-tools gx-3">
+                                                    <li>
+                                                        <a href="#" class="btn btn-primary"><span>Deposit Amount</span> <em class="icon ni ni-arrow-long-right d-none d-sm-inline-block"></em></a>
+                                                    </li>
+                          
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								
+								
+								
+								
+								
+								  <div class="nk-block">
+                                        <div class="card card-bordered card-stretch">
+                                            <div class="card-inner-group">
+                                                <div class="card-inner position-relative">
+                                                    <div class="card-title-group">
+													
+                                                     <div class="col-lg-4 col-md-6 col-sm-6" style="float:right;">
+                                                        <div class="m-input-icon m-input-icon--left">
+                                                            <input type="text" class="form-control m-input" placeholder="Search For Mutual Funds..." id="userMutualFundSearch">
+                                                            <span class="m-input-icon__icon m-input-icon__icon--left">
+                                                                <span><i class="la la-search"></i></span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
+													 <div class="col-lg-2 col-md-2">													 
+													    
+													 </div>
+
+                                                    <div class="col-lg-4 col-md-4">	
+													
+                                                        <div class="m-form__group m-form__group--inline">
+														
+														    <div class="m-form__label">
+																<label class="m-label m-label--single">Risk:</label>
+															</div>
+														
+                                                            <div class="m-form__control">														
+                                                                <select class="form-control m-select2" id="m_form_status">
+                                                                    <option value="">All Funds</option>
+                                                                    <option value="high">High Risk Funds</option>
+                                                                    <option value="moderate">Moderate Risk Funds </option>
+                                                                    <option value="low">Low Risk Funds </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+													
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="card-inner p-0">
+                                                   
+													<!--begin: Datatable -->
+													<div class="m_datatable" id="mutual_fund_data"></div>
+													<!--end: Datatable -->
+												   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+							
+							
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+								
+								
+								
+								
+								
+								
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+		     <div class="modal fade" tabindex="-1" id="viewMutualFundDetails">
+				<div class="modal-dialog modal-xl" role="document">
+					<div class="modal-content">
+						<a href="#" class="close" data-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
+						<div class="modal-body modal-body-md">
+				
+						    <br>
+						    <div class="block-ui-spinner" id="mutualFundDetailsLoader">
+						
+						    </div>
+				
+				            <div class="nk-block-head hide"  id="mutualFundDetailsContainer">
+                                    <div class="nk-block-head-content">
+                                        <div class="nk-block-head-sub">
+                                           <strong><span id="amcName">Mutual Fund Scheme</span></strong>
+                                        </div>
+                                        <div class="nk-block-between-md g-4">
+                                            <div class="nk-block-head-content">
+                                                <h2 class="nk-block-title fw-normal"><span id="schemeName">Silver - Daily</span></h2>
+                                                <p class="sub-title"> <span id="fundDescription">An open ended equity scheme predominantly investing in bluechip stocks</span></p>
+												<div class="nk-block-des">
+                                                    <p><span class="schemeId">INV-498238 </span> <span class="badge badge-outline badge-success" class="schemeStatus">Active</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="nk-block-head-content">
+                                                <ul class="nk-block-tools gx-3">
+                                                    <li class="order-md-last">
+                                                        <a href="javascript:;" class="btn btn-primary"  id="buy_now_button" onclick="triggerBuy()"><em class="icon ni ni-coins"></em> <span>Buy Now</span> </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+										<br>
+                                    </div>
+                                
+                                <div class="nk-block">
+                                    <div class="card card-bordered">
+                                        <div class="card-inner">
+                                            <div class="row gy-gs">
+                                                <div class="col-md-6">
+                                                    <div class="nk-iv-wg3">
+                                                        <div class="nk-iv-wg3-group flex-lg-nowrap gx-4">
+                                                            <div class="nk-iv-wg3-sub">
+                                                                <div class="nk-iv-wg3-amount"><div class="number">Rs. <span id="minimumInvestment">2,500.00</span></div></div>
+                                                                <div class="nk-iv-wg3-subtitle">Minimum Investment</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-4 offset-lg-2">
+                                                    <div class="nk-iv-wg3 pl-md-3">
+                                                        <div class="nk-iv-wg3-group flex-lg-nowrap gx-4">
+                                                            <div class="nk-iv-wg3-sub">
+                                                                <div class="nk-iv-wg3-amount">
+                                                                    <div class="number">
+                                                                       Rs. <span class="aumAmount"> 4,999.90 </span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="nk-iv-wg3-subtitle">AUM (Cr)</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="schemeDetails" class="nk-iv-scheme-details">
+                                            <ul class="nk-iv-wg3-list">
+                                                <li>
+                                                    <div class="sub-text">Term</div>
+                                                    <div class="lead-text"><span class="termMonth">21 </span> Months</div>
+                                                </li>
+                                                <li>
+                                                    <div class="sub-text">Scheme ID</div>
+                                                    <div class="lead-text"> <span class="schemeId"></span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="sub-text">ISIN ID</div>
+                                                    <div class="lead-text"><span id="isinId"></span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="sub-text">Exchange</div>
+                                                    <div class="lead-text"><span id="exchange">NSE</span></div>
+                                                </li>
+												<li>
+                                                    <div class="sub-text">Investment Type</div>
+                                                    <div class="lead-text"><span id="investmentType">Large Cap</span></div>
+                                                </li>
+                                            </ul>
+                                            <ul class="nk-iv-wg3-list">
+                                                <li>
+                                                    <div class="sub-text">Fund Category</div>
+                                                    <div class="lead-text"><span id="fundCategory"></span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="sub-text">Rating</div>
+                                                    <div class="lead-text"><span id="rating"></span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="sub-text">NAV</div>
+                                                    <div class="lead-text"><span  id="nav"></span></div>
+                                                </li>
+                                                <li>
+                                                    <div class="sub-text">Risk Category</div>
+                                                    <div class="lead-text"><span id="riskCategory"></span></div>
+                                                </li>
+												<li>
+                                                    <div class="sub-text">AUM</div>
+                                                    <div class="lead-text"><span class="aumAmount"></span>%</div>
+                                                </li>
+                                            </ul>
+                                            <ul class="nk-iv-wg3-list">
+                                                <li>
+                                                    <div class="sub-text">1 Year Returns</div>
+                                                    <div class="lead-text"><span id="oneYearReturns"></span>%</div>
+                                                </li>
+												<li>
+                                                    <div class="sub-text">3 Year Returns</div>
+                                                    <div class="lead-text"><span id="threeYearReturns"></span>%</div>
+                                                </li>
+												<li>
+                                                    <div class="sub-text">5 Year Returns</div>
+                                                    <div class="lead-text"><span id="fiveYearReturns"></span>%</div>
+                                                </li>												
+                                                <li>
+                                                    <div class="sub-text">CGAR</div>
+                                                    <div class="lead-text"><span id="cgar"></span>%</div>
+                                                </li>
+												<li>
+                                                    <div class="sub-text">Status</div>
+                                                    <div class="lead-text"><span class="badge badge-dim badge-sm badge-outline-success kycStatus">Active</span></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+					
+				
+					</div>
+			   </div>
+			</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		  <div class="modal fade" tabindex="-1" id="buyMutualFund">
+				<div class="modal-dialog modal-lg" role="document">
+					<div class="modal-content">
+						<a href="#" class="close" data-dismiss="modal" aria-label="Close"><em class="icon ni ni-cross"></em></a>
+						<div class="modal-body modal-body-md">
+				
+				           <br>
+						    <div class="block-ui-spinner5" id="buyMutualFundLoader">
+						    </div>
+				         <div class="buysell wide-xs m-auto">
+				           <div class="buysell-block" id="buyMutualFundContainer">
+                              <form class="buy-form" id="buy-form" action="#" method="post" novalidate="novalidate">
+                                 <div class="buysell-field form-group">
+                                   
+                                    <input type="hidden" value="btc" name="bs-currency" id="buysell-choose-currency">
+                                    <div class="dropdown buysell-cc-dropdown">
+                                       <a href="#" class="buysell-cc-choosen dropdown-indicator" data-toggle="dropdown">
+                                          <div class="coin-item coin-btc">
+                                             <div class="coin-icon"><div class="user-avatar bg-warning"><span class="fundIntial"></span></div></div>
+                                             <div class="coin-info"><span class="coin-name buyFundName">Fund Name</span><span class="coin-text buyScehemeId">Last Order: May30, 2020</span></div>
+                                          </div>
+                                       </a>
+                                       <div class="dropdown-menu dropdown-menu-auto dropdown-menu-mxh">
+                                          <ul class="buysell-cc-list">
+                                             <li class="buysell-cc-item selected">
+                                                <a href="#" class="buysell-cc-opt" data-currency="btc">
+                                                   <div class="coin-item coin-btc">
+                                                      <div class="coin-icon"><div class="user-avatar bg-warning"><span class="fundIntial"></span></div></div>
+                                                      <div class="coin-info"><span class="coin-name buyFundName">Fund Name</span><span class="coin-text buyScehemeId" >Last Order: May 30, 2020</span></div>
+                                                   </div>
+                                                </a>
+                                             </li>
+                                          </ul>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="buysell-field form-group">
+								 
+                                    <div class="form-label-group"><label class="form-label" for="buysell-amount">Amount to Buy</label></div>
+                                    <div class="form-control-group">
+                                       <input type="number" class="form-control form-control-lg form-control-number" id="buy-amount" name="bs-amount" placeholder="1000" required>
+                                       <div class="form-dropdown">
+                                          <div class="text">INR<span></span></div>
+                                       </div>
+                                    </div>
+                                
+                                 </div>
+                                 <div class="buysell-field form-group">
+                                    <div class="form-label-group"><label class="form-label">Payment Method</label></div>
+                                    <div class="form-pm-group">
+                                       <ul class="buysell-pm-list">
+                                          <li class="buysell-pm-item"><input class="buysell-pm-control" type="radio" name="bs-method" value="paypal" id="pm-paypal" checked /><label class="buysell-pm-label" for="pm-paypal"><span class="pm-name">PayPal</span><span class="pm-icon"><em class="icon ni ni-paypal-alt"></em></span></label></li>
+                                          <li class="buysell-pm-item"><input class="buysell-pm-control" type="radio" name="bs-method" value="bank" id="pm-bank" /><label class="buysell-pm-label" for="pm-bank"><span class="pm-name">Bank Transfer</span><span class="pm-icon"><em class="icon ni ni-building-fill"></em></span></label></li>
+                                          <li class="buysell-pm-item"><input class="buysell-pm-control" type="radio" name="bs-method" value="card" id="pm-card" /><label class="buysell-pm-label" for="pm-card"><span class="pm-name">Credit / Debit Card</span><span class="pm-icon"><em class="icon ni ni-cc-alt-fill"></em></span></label></li>
+                                       </ul>
+                                    </div>
+                                 </div>
+                                 <div class="buysell-field form-action"><button type="submit" class="btn btn-lg btn-block btn-primary">Continue to Buy</button></div>
+                                
+                              </form>
+                           </div>
+				         </div>
+				
+				
+				
+					</div>
+			
+			</div>
+			</div>
+		</div>
+				
+				
+				
+      <div class="modal fade" tabindex="-1" role="dialog" id="buy-coin">
+         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+               <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+               <div class="modal-body modal-body-lg">
+                  <div class="nk-block-head nk-block-head-xs text-center">
+                     <h5 class="nk-block-title">Confirm Order</h5>
+                     <div class="nk-block-text">
+                        <div class="caption-text">You are about to buy fund for <strong><span class="amountToDeduct"></span></strong> INR*</div>
+                        <span class="sub-text-sm">Brokerage Charges: 1.5% (inclusive of all taxes)<span>
+                     </div>
+                  </div>
+                  <div class="nk-block">
+                     <div class="buysell-overview">
+                        <ul class="buysell-overview-list">
+                           <li class="buysell-overview-item"><span class="pm-title">Pay with</span><span class="pm-currency" ><em class="icon ni ni-wallet-alt"></em> <span id="confirmPaymentMethod" style="text-transform: capitalize;">PayPal</span></span></li>
+                           <li class="buysell-overview-item"><span class="pm-title">Total</span><span class="pm-currency"><span class="amountToDeduct"> </span>  &nbsp;INR</span></li>
+                        </ul>
+                        <div class="sub-text-sm">* Our transaction fee are included.</div>
+                     </div>
+                     <div class="buysell-field form-group">
+                        
+                        <input type="hidden" value="btc" name="bs-currency" id="buysell-choose-currency-modal">
+                        <div class="dropdown buysell-cc-dropdown">
+                           <a href="#" class="buysell-cc-choosen dropdown-indicator" data-toggle="dropdown">
+                              <div class="coin-item coin-btc">
+                                 <div class="coin-icon"><div class="user-avatar bg-warning"><span class="fundIntial"></span></div></div>
+                                 <div class="coin-info"><span class="coin-name"> <span class="buyFundName">Fund Name</span></span><span class="coin-text"> <span class="buyScehemeId">1X38 * * * * YW94</span></span></div>
+                              </div>
+                           </a>
+						   <div class="dropdown-menu dropdown-menu-auto dropdown-menu-mxh">
+                              <ul class="buysell-cc-list">
+                                 <li class="buysell-cc-item selected">
+                                    <a href="#" class="buysell-cc-opt" data-currency="btc">
+                                       <div class="coin-item coin-btc">
+                                          <div class="coin-icon"><div class="user-avatar bg-warning"><span class="fundIntial"></span></div></div>
+                                          <div class="coin-info"><span class="coin-name"><span class="buyFundName">Fund Name</span></span><span class="coin-text buyScehemeId">1X38 * * * * YW94</span></div>
+                                       </div>
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+						   
+                        </div>
+                     </div>
+                     <div class="buysell-field form-action text-center">
+                        <div><a href="#" class="btn btn-primary btn-lg" data-dismiss="modal" data-toggle="modal" data-target="#confirm-coin" id="confirmOrder" >Confirm the Order</a></div>
+                        <div class="pt-3"><a href="#" data-dismiss="modal" class="link link-danger">Cancel Order</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+	  
+	  
+	  
+	  
+	  
+	  <div class="modal fade" tabindex="-1" role="dialog" id="confirm-coin">
+         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+               <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+               <div class="modal-body modal-body-lg text-center">
+                  <div class="nk-modal">
+                     <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-check bg-success"></em>
+                     <h4 class="nk-modal-title">Successfully payment received!</h4>
+                     <div class="nk-modal-text">
+                        <p class="caption-text">You’ve successfully bought fund - <strong><span id="confirmFundName"></span></strong> for <strong><span id="buyTotalAmount">200.00</span></strong> INR.</p>
+                        <p class="sub-text-sm">Learn how to improve your portfolio <a href="./index.html"> Click here</a></p>
+                     </div>
+                     <div class="nk-modal-action-lg">
+                        <ul class="btn-group gx-4">
+                           <li><a href="#"  data-dismiss="modal" class="btn btn-lg btn-mw btn-primary">Go Back</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer bg-lighter">
+                  <div class="text-center w-100">
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+	  
+	  
+	  
+	  
+				
+				
+				
+                <div class="nk-footer nk-footer-fluid bg-lighter">
+                    <div class="container-xl wide-lg">
+                        <div class="nk-footer-wrap">
+                            <div class="nk-footer-copyright">&copy; 2020 Finaco Mutual Fund. All Rights Reserved</div>
+                            <div class="nk-footer-links">
+                                <ul class="nav nav-sm">
+                                    <li class="nav-item"><a class="nav-link" href="#">Terms</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Privacy</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="./assets/js/vendors.bundle.js"></script>
+		<script src="./assets/js/scripts.bundle.js"></script>
+		
+        <script src="./assets/js/invest.js"></script>
+    </body>
+</html>

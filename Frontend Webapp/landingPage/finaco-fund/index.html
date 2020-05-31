@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Finaco Mutual Fund - Home</title>
+    <meta name="description" content="">
+	<link rel="icon" href="assets/images/favicon.png">
+	
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/glide.css">
+    <link rel="stylesheet" href="assets/css/content-box.css">
+    <link rel="stylesheet" href="assets/css/skin.css">
+	
+	<script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+	<!--MSAL JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js" class="pre"></script>
+    <script type="text/javascript" src="https://alcdn.msftauth.net/lib/1.2.1/js/msal.min.js" integrity="sha384-Z4L5heyGO9VZ/MBCDx9GRtQW50Hrmp32ByIKuqwFesWyB+MDNy9ueVgclolfwj1Q" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="preloader"></div>
+    <nav class="menu-classic menu-fixed menu-transparent menu-one-page align-right light" data-menu-anima="fade-bottom" data-scroll-detect="true">
+        <div class="container">
+            <div class="menu-brand">
+                <a href="#">
+                    <img class="logo-default" src="assets/images/finaco-mutual-fund-logo.png" alt="logo" />
+                    <img class="logo-retina" src="assets/images/finaco-mutual-fund-logo.png" alt="logo" />
+                </a>
+            </div>
+            <i class="menu-btn"></i>
+            <div class="menu-cnt">
+                <ul>
+                    <li>
+                        <a href="#overview">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#features">Services</a>
+                    </li>
+					<li>
+                        <a href="./about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#contact-us">Contact Us</a>
+                    </li>
+
+                </ul>
+                <div class="menu-right">
+                    <div class="menu-custom-area">
+                        <a class="btn btn-border btn-circle btn-xs" onclick="signIn()" href="javascript:void(0)" id="login-button" style="display:none;">Login Now</a>
+						<a class="btn btn-border btn-circle btn-xs" onclick="logout()" href="javascript:void(0)" id="logout-button" style="display:none;">Logout Now</a>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="section-image section-full-width-right light section-bottom-layer" style="background-image:url(assets/images/home/bg.png)">
+            <div class="container">
+                <hr class="space" />
+                <div class="row">
+                    <div class="col-lg-6" data-anima="fade-in" data-time="1000">
+                        <hr class="space" />
+                        <h1>
+                            Smart Fund Management with Blockchain
+                        </h1>
+                        <p>
+                            Our blockchain enabled platform is adding a greater value to our asset managment services in terms of seamless customer on-boarding, portfolio management, trading & settlement.
+                        </p>
+                        <a class="btn btn-sm btn-circle shadow-1 full-width-sm" onclick="signUp()" href="javascript:void(0)" id="create-account-button" style="display:none;">Create your account</a><span class="space"></span>
+                        <a class="btn btn-sm btn-circle shadow-1 full-width-sm" href="https://accounts.tashiqa.com" id="console-button" target="_blank" rel="noopener noreferrer"   style="display:none;">Go to Console</a>
+						<a href="https://www.youtube.com/watch?v=beryTFelYrE?rel=1&autoplay=1&enablejsapi=1" data-toggle="modal" class="btn-text btn-video lightbox hidden-sm">View video</a><span class="space"></span>
+					   <hr class="space" />
+					   
+                    </div>
+                    <div class="col-lg-6">
+              
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-base" id="overview">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="grid-list" data-columns="2" data-columns-xs="1">
+                            <div class="grid-box">
+                                <div class="grid-item">
+                                    <div class="cnt-box cnt-box-top-icon boxed">
+                                        <i class="im-globe"></i>
+                                        <div class="caption">
+                                            <h2>KYC Verification</h2>
+                                            <p>
+                                                Verify your identity once and use it for multiple financial services
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-item">
+                                    <div class="cnt-box cnt-box-top-icon boxed">
+                                        <i class="im-bar-chart4"></i>
+                                        <div class="caption">
+                                            <h2>Fund Management</h2>
+                                            <p>
+                                                Seamless and frictionless management of your funds
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <hr class="space-sm visible-md" />
+                        <h2>Future of investment<br /> banking is with blockchain.</h2>
+                        <p>
+                            Blockchain and distributed ledgers have a bright future with real-time, open-source and trusted platforms that securely transmit data and value, which can help banks not only reduce the cost of processing payments, but also create new products and services that can generate new revenue streams.
+                        </p>
+                        <a href="#features" class="btn-text">Explore our services</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section  class="section-base section-color section-full-width-left section-bottom-layer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="assets/images/home/iso-2.png" alt="" />
+                    </div>
+                    <div class="col-lg-6" data-anima="fade-right" data-time="1000">
+                        <hr class="space" />
+                        <h2>Trusted all over the world<br />by a wide range of customers.</h2>
+                        <p>
+                            We are connecting global client needs with asset management strategies and real-time customer data, stored at a single, secure immutable ledger. It helps our fund managers to make quick investment decisions, which is vital for wealth generation, and protects portfolios from risk.
+                        </p>
+						
+						<p>
+                            Our innovative fund management ecosystem helping wide variety of customers  to reach the targetted gols with modern investment techniques.
+                        </p>
+                        <hr class="space hidden-md" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-base">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2>All your questions are<br />very important to us and help us grow better.</h2>
+                    </div>
+                    <div class="col-lg-4">
+                        <ul class="accordion-list">
+                            <li>
+                                <a href="#">Is KYC Mandatory?</a>
+                                <div class="content">
+                                    <p>
+                                        The requirement is mandatory. An investor who wishes to open a new account in a mutual fund where he/she has never invested before is required to complete the formalities in order to enable them to invest.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Who can avail the SIP facility?
+                                </a>
+                                <div class="content">
+                                    <p>
+                                        An existing individual investor can register SIP online. Investor need to have Net banking with utility payment facility enabled with bank registered in the portfolio.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">How long does it take to complete the KYC formalities?</a>
+                                <div class="content">
+                                    <p>
+                                        It takes upto 3 business days to complete the KYC formalities if complete and proper documentation is received. However, Investor may start transacting immediately on receipt of the KYC acknowledgement letter.
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-lg-4">
+                        <ul class="accordion-list">
+                            <li>
+                                <a href="#">What are the tax benefits?</a>
+                                <div class="content">
+                                    <p>
+                                        Equity Linked Savings Scheme (ELSS) is a type of mutual fund scheme that can provide tax benefits. It also has a lock in period of 3 years.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">Can I switch between funds?</a>
+                                <div class="content">
+                                    <p>
+                                        You may switch all or part of your investments in one fund to another available fund. AMCs do not charge fees for such switches. To process a switch, you need to provide clear instructions, by completing a online form.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">What are the inherent risks in mutual funds?</a>
+                                <div class="content">
+                                    <p>
+                                        Equity Funds are open to market risks; the price of the stocks in which the fund has invested may reduce. Conversely, the prices may go up, enabling the funds to earn profits. Debts Funds are open to credit and interest rate risks.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="features" class="section-base section-color">
+            <div class="container">
+                <h2 class="align-center">A large range of services.</h2>
+                <p class="align-center width-650">
+                    There is a wide range of mutual funds schemes available to meet individual goals. We also provide customized investment solutions for every need.
+                </p>
+                <hr class="space" />
+                <div class="grid-list" data-columns="3" data-columns-md="2" data-columns-xs="1">
+                    <div class="grid-box">
+                        <div class="grid-item">
+                            <div class="cnt-box cnt-box-top-icon boxed">
+                                <i class="im-bar-chart4"></i>
+                                <div class="caption">
+                                    <h2>Equity Funds</h2>
+                                    <p>
+                                        For long term sustainable wealth creation
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="cnt-box cnt-box-top-icon boxed">
+                                <i class="im-master-card"></i>
+                                <div class="caption">
+                                    <h2>Hybrid Funds</h2>
+                                    <p>
+                                        For low volatile equity product linked returns 
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="cnt-box cnt-box-top-icon boxed">
+                                <i class="im-wallet-2"></i>
+                                <div class="caption">
+                                    <h2>Debt Funds</h2>
+                                    <p>
+                                        For short term savings and earnings of funds
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="cnt-box cnt-box-top-icon boxed">
+                                <i class="im-globe"></i>
+                                <div class="caption">
+                                    <h2>International Funds</h2>
+                                    <p>
+                                        For investing in worldwide global markets
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="cnt-box cnt-box-top-icon boxed">
+                                <i class="im-shuffle-4"></i>
+                                <div class="caption">
+                                    <h2>Exchange Trade Funds</h2>
+                                    <p>
+                                        ETFs are the healthier way to diversify your portfolio
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="cnt-box cnt-box-top-icon boxed">
+                                <i class="im-money-bag"></i>
+                                <div class="caption">
+                                    <h2>Systematic Investment Plan</h2>
+                                    <p>
+                                        SIP is a disciplined approach to investing in mutual funds
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		
+		<section class="section-base">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <hr class="space-xs" />
+                        <h1>Succesfull stories.</h1>
+                        <p>
+                            Equity funds are prone to volatility but their returns are also high. Enter systematic investment plans, they mitigate volatility and still give good returns
+                        </p>
+						
+						<p>
+                            Our decade partnered clients has excelled in their investment process by using our trending technology strategies and right decision making of investments.
+                        </p>
+                  
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="margin-23 margin-md-23" src="assets/images/home/customers.png" alt="" />
+                    </div>
+                </div>
+		   </div>
+        </section>
+		
+		
+		
+		
+
+
+	
+
+        <section class="section-base section-color" id="contact-us">
+            <div class="container">
+                <div class="row" data-anima="fade-bottom" data-time="1000">
+                    <div class="col-lg-6">
+                        <form id="subscribe-form" action="#" onsubmit="subscribeForm()" class="form-box form-ajax boxed-area">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <p>First name</p>
+                                    <input id="name" name="firstname" placeholder="Firstname" type="text" class="input-text" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>Last name</p>
+                                    <input id="surname" name="lastname" placeholder="Lastname" type="text" class="input-text" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>Email</p>
+                                    <input id="email2" name="email" placeholder="Email" type="email" class="input-text" required>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>Phone</p>
+                                    <input id="phone" name="phone" placeholder="Phone" type="text" class="input-text" required>
+                                </div>
+                                <div class="col-lg-12">
+                                    <p>Address</p>
+                                    <input id="Address" name="address" placeholder="Address" type="text" class="input-text" required>
+                                </div>
+                            </div>
+							<br><br>
+                            <button class="btn btn-sm btn-circle" type="submit">Send message</button>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="check2" name="check2" value="check" required>
+                                <label for="check">You accept the terms of service and the privacy policy</label>
+                            </div>
+							<br><br>
+                            <div class="success-box hidden">
+                                <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="col-lg-6">
+                        <hr class="space-sm visible-md" />
+                        <h2>
+                            Are you ready to begin your <br>investment journey?
+                        </h2>
+                        <p>
+                            Leave your contact details here, we will get in touch with you
+                        </p>
+                        <ul class="icon-list icon-circle">
+                            <li>Responsibly managing money and risks to help people feel financially secure and confident of a brighter and prosperous future.</li>
+                            <li>We are accountable and we take ownership</li>
+							 <li>We go beyond the call of duty and do the right thing even when no one is watching</li>
+                        </ul>
+                        <hr class="space space-40" />
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+	
+	<div class="modal" id="videoModal" role="dialog" aria-labelledby="videoModalLabel">
+        <figure role="document" class="video">
+        <header>
+            <button type="button" data-dismiss="modal" aria-label="Close">×</button>
+        </header>
+        <article>
+            <iframe width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </article>
+		</figure>
+	</div>
+<!-- partial -->
+	
+	
+    <i class="scroll-top-btn scroll-top show"></i>
+    <footer class="footer-parallax light">
+        <div class="footer-bar">
+            <div class="container">
+                <span>© Finaco Mutual Fund LTD 2020. All rights reserved </span>
+                <span><img src="assets/images/finaco-mutual-fund-logo.png" alt="footer logo" /></span>
+            </div>
+        </div>
+        <link rel="stylesheet" href="assets/images/icons/iconsmind/line-icons.min.css">
+		
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script src="assets/js/glide.min.js"></script>
+		<script src="assets/js/tab-accordion.js"></script>
+		<script src="assets/js/msal-auth.js"></script>
+    </footer>
+</body>
+
+</html>
