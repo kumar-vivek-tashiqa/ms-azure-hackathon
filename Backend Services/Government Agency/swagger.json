@@ -1,0 +1,327 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Goverment Agency API Service",
+    "description": "These API interfaces will be used by goverment agency to interact with bank and customer information.",
+    "contact": {
+      "email": "kumarvivek@tashiqa.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api-governmentagency.azurewebsites.net/api"
+    }
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "tags": [
+          "Ping"
+        ],
+        "summary": "service health check",
+        "description": "To verify is the service is up and running",
+        "operationId": "ping",
+        "responses": {
+          "200": {
+            "description": "Government agency service is up and running."
+          },
+          "400": {
+            "description": "Service is unable to start."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/hackathon/sampleData": {
+      "post": {
+        "tags": [
+          "Azure Hackathon - Sample Data"
+        ],
+        "summary": "create sample data for hackathon",
+        "description": "This kickstart the database and onboard important systems like banks into the system.",
+        "operationId": "sample-data",
+        "responses": {
+          "200": {
+            "description": "Successfully created the bank sample data."
+          },
+          "400": {
+            "description": "Sample data already available. / Unable to perform the query, check database connectivity."
+          }
+        }
+      }
+    },
+    "/authentication": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "authenticate government users",
+        "description": "Authenticating users against basic username and password, for hackathon a sample user is already created with credentials = username -> govt_user1, password -> Delta123@",
+        "operationId": "authenticate",
+        "responses": {
+          "200": {
+            "description": "Authentication successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BasicAuthenticationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Inavlid username or password, please try again with a valid credentials."
+          }
+        },
+        "requestBody": {
+          "description": "pass tenant name to validate",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BasicAuthentication"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/banks": {
+      "get": {
+        "tags": [
+          "Banks"
+        ],
+        "summary": "list of banks",
+        "description": "Allow government bodies to query all banks registered.",
+        "operationId": "listallbanks",
+        "responses": {
+          "200": {
+            "description": "List of all banks registered.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BankList"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Basic authentication missing."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/banks/{bankId}": {
+      "get": {
+        "tags": [
+          "Banks"
+        ],
+        "summary": "get bank information by id",
+        "description": "Allow government bodies to query banks registered using id.",
+        "operationId": "bankbyid",
+        "parameters": [
+          {
+            "name": "bankId",
+            "in": "path",
+            "description": "ID of the bank for which information is supposed to be returned",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "single bank information.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Basic authentication missing."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BasicAuthentication": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "BasicAuthenticationResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "base64Key": {
+            "type": "string"
+          }
+        }
+      },
+      "Bank": {
+        "type": "object",
+        "properties": {
+          "bankId": {
+            "type": "number"
+          },
+          "bankName": {
+            "type": "string"
+          },
+          "bankType": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private"
+            ]
+          },
+          "bankInformation": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "zipcode": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "legalEntity": {
+                "type": "string",
+                "enum": [
+                  "pvt ltd",
+                  "corporation"
+                ]
+              },
+              "numberOfEmployees": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "active",
+              "inactive"
+            ]
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "BankList": {
+        "type": "array",
+        "xml": {
+          "name": "BankList"
+        },
+        "items": {
+          "type": "object",
+          "properties": {
+            "bankId": {
+              "type": "number"
+            },
+            "bankName": {
+              "type": "string"
+            },
+            "bankType": {
+              "type": "string",
+              "enum": [
+                "public",
+                "private"
+              ]
+            },
+            "bankInformation": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "zipcode": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "legalEntity": {
+                  "type": "string",
+                  "enum": [
+                    "pvt ltd",
+                    "corporation"
+                  ]
+                },
+                "numberOfEmployees": {
+                  "type": "string"
+                }
+              }
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "active",
+                "inactive"
+              ]
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "local": {
+    "adTenantInformation": {
+      "JWK_URI": "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_sign_in/discovery/v2.0/keys",
+      "ISS": "https://dfmplatform.b2clogin.com/8c9d936b-ad47-4383-a158-8b19c5378a81/v2.0/",
+      "AUD": "1e194e91-56a7-4e54-b35b-ded2a38ca38f"
+    }
+  },
+  "development": {
+    "adTenantInformation": {
+      "JWK_URI": "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_sign_in/discovery/v2.0/keys",
+      "ISS": "https://dfmplatform.b2clogin.com/8c9d936b-ad47-4383-a158-8b19c5378a81/v2.0/",
+      "AUD": "1e194e91-56a7-4e54-b35b-ded2a38ca38f"
+    }
+  },
+  "production": {
+    "adTenantInformation": {
+      "JWK_URI": "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_sign_in/discovery/v2.0/keys",
+      "ISS": "https://dfmplatform.b2clogin.com/8c9d936b-ad47-4383-a158-8b19c5378a81/v2.0/",
+      "AUD": "1e194e91-56a7-4e54-b35b-ded2a38ca38f"
+    }
+  }
+}

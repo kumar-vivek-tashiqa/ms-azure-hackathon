@@ -1,0 +1,739 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Verify KYC API Service",
+    "description": "These API interfaces will be used by verify kyc agency to interact with customer information.",
+    "contact": {
+      "email": "kumarvivek@tashiqa.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api-verifykyc.azurewebsites.net/api"
+    }
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "tags": [
+          "Ping"
+        ],
+        "summary": "service health check",
+        "description": "To verify is the service is up and running",
+        "operationId": "ping",
+        "responses": {
+          "200": {
+            "description": "Verify KYC service is up and running."
+          },
+          "400": {
+            "description": "Service is unable to start."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/authentication": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "authenticate verify kyc users",
+        "description": "Authenticating users against basic username and password, for hackathon a sample user is already created with credentials = username -> verifykyc_user1, password -> Gamma123@",
+        "operationId": "authenticate",
+        "responses": {
+          "200": {
+            "description": "Authentication successful.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BasicAuthenticationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Inavlid username or password, please try again with a valid credentials."
+          }
+        },
+        "requestBody": {
+          "description": "pass tenant name to validate",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BasicAuthentication"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kyc/profile": {
+      "post": {
+        "tags": [
+          "KYC Profile"
+        ],
+        "summary": "create kyc profile",
+        "description": "Allow users to create KYC profile.",
+        "operationId": "createKYC",
+        "responses": {
+          "200": {
+            "description": "Response object of created KYC profile.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/KYC"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "requestBody": {
+          "description": "pass kyc information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KYCCreateProfile"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "patch": {
+        "tags": [
+          "KYC Profile"
+        ],
+        "summary": "create kyc profile",
+        "description": "Allow users to create KYC profile.",
+        "operationId": "updateKYCProfile",
+        "responses": {
+          "200": {
+            "description": "KYC Updated."
+          },
+          "400": {
+            "description": "Unable to perform DB transaction. KYC profile doesn't exist."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "requestBody": {
+          "description": "pass kyc information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KYCUpdateProfile"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/kyc/profile/me": {
+      "get": {
+        "tags": [
+          "KYC Profile"
+        ],
+        "summary": "get kyc using JWT",
+        "description": "Allow users to get their KYC information.",
+        "operationId": "getKYC",
+        "responses": {
+          "200": {
+            "description": "Response object of created KYC profile."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/kyc/profile/all": {
+      "get": {
+        "tags": [
+          "KYC Profile"
+        ],
+        "summary": "get all kyc by Govt and KYC Admin",
+        "description": "Allow Govt and KYC Admin to get all kyc list.",
+        "operationId": "allkyc",
+        "responses": {
+          "200": {
+            "description": "Array of KYC Profile"
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/kyc/profile/user/{userId}": {
+      "get": {
+        "tags": [
+          "KYC Profile"
+        ],
+        "summary": "get KYC profile by Id",
+        "description": "Show KYC profile for indivisual users.",
+        "operationId": "getProfileById",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of the user for which information is supposed to be returned",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "KYC Profile"
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/kyc/status/me": {
+      "get": {
+        "tags": [
+          "KYC Status"
+        ],
+        "summary": "get kyc status using JWT",
+        "description": "Allow users to get their KYC status.",
+        "operationId": "getKYCStatus",
+        "responses": {
+          "200": {
+            "description": "Response with KYC status."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/kyc/status/user/{kycId}": {
+      "patch": {
+        "tags": [
+          "KYC Status"
+        ],
+        "summary": "get kyc status by KYC ID",
+        "description": "Allow users to get information by KYC ID",
+        "operationId": "getKYCStatusByID",
+        "parameters": [
+          {
+            "name": "kycId",
+            "in": "path",
+            "description": "ID of kyc for which information is supposed to be returned",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "pass kyc information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KYCApprove"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response of KYC status."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized / Missing JWT token."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/uploadfile": {
+      "post": {
+        "tags": [
+          "Upload File"
+        ],
+        "summary": "Upload KYC",
+        "description": "Enable users to add kyc attachment.",
+        "operationId": "uploadImage",
+        "requestBody": {
+          "content": {
+            "image/png": {
+              "schema": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response include url of the uploaded image"
+          },
+          "400": {
+            "description": "Invalid format, please upload a valid PNG file with size less than 10 MB."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BasicAuthentication": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "BasicAuthenticationResponse": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "base64Key": {
+            "type": "string"
+          }
+        }
+      },
+      "KYC": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "uniqueUserId": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "emailId": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string"
+          },
+          "fathersFullName": {
+            "type": "string"
+          },
+          "mothersFullName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "transgender"
+            ]
+          },
+          "maritalStatus": {
+            "type": "string",
+            "enum": [
+              "married",
+              "unmarried",
+              "others"
+            ]
+          },
+          "citizenship": {
+            "type": "string"
+          },
+          "residentialStatus": {
+            "type": "string"
+          },
+          "occupationType": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "addressLine1": {
+                "type": "string"
+              },
+              "addressLine2": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "zipCode": {
+                "type": "string"
+              },
+              "addressType": {
+                "type": "string"
+              }
+            }
+          },
+          "panNumber": {
+            "type": "string"
+          },
+          "proofOfAddress": {
+            "type": "object",
+            "properties": {
+              "documentType": {
+                "type": "string",
+                "enum": [
+                  "passport",
+                  "driving licence"
+                ]
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "frontImageURL": {
+                "type": "string"
+              },
+              "backImageURL": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "verified",
+              "rejected",
+              "outdated"
+            ]
+          },
+          "comments": {
+            "type": "string"
+          },
+          "approvedAt": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "KYCCreateProfile": {
+        "type": "object",
+        "properties": {
+          "phoneNumber": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string"
+          },
+          "fathersFullName": {
+            "type": "string"
+          },
+          "mothersFullName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "transgender"
+            ]
+          },
+          "maritalStatus": {
+            "type": "string",
+            "enum": [
+              "married",
+              "unmarried",
+              "others"
+            ]
+          },
+          "citizenship": {
+            "type": "string"
+          },
+          "residentialStatus": {
+            "type": "string"
+          },
+          "occupationType": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "addressLine1": {
+                "type": "string"
+              },
+              "addressLine2": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "zipCode": {
+                "type": "string"
+              },
+              "addressType": {
+                "type": "string"
+              }
+            }
+          },
+          "panNumber": {
+            "type": "string"
+          },
+          "proofOfAddress": {
+            "type": "object",
+            "properties": {
+              "documentType": {
+                "type": "string",
+                "enum": [
+                  "passport",
+                  "driving licence"
+                ]
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "frontImageURL": {
+                "type": "string"
+              },
+              "backImageURL": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "verified",
+              "rejected",
+              "outdated"
+            ]
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "KYCUpdateProfile": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string"
+          },
+          "fathersFullName": {
+            "type": "string"
+          },
+          "mothersFullName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "male",
+              "female",
+              "transgender"
+            ]
+          },
+          "maritalStatus": {
+            "type": "string",
+            "enum": [
+              "married",
+              "unmarried",
+              "others"
+            ]
+          },
+          "citizenship": {
+            "type": "string"
+          },
+          "residentialStatus": {
+            "type": "string"
+          },
+          "occupationType": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "addressLine1": {
+                "type": "string"
+              },
+              "addressLine2": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "zipCode": {
+                "type": "string"
+              },
+              "addressType": {
+                "type": "string"
+              }
+            }
+          },
+          "panNumber": {
+            "type": "string"
+          },
+          "proofOfAddress": {
+            "type": "object",
+            "properties": {
+              "documentType": {
+                "type": "string",
+                "enum": [
+                  "passport",
+                  "driving licence"
+                ]
+              },
+              "documentId": {
+                "type": "string"
+              },
+              "frontImageURL": {
+                "type": "string"
+              },
+              "backImageURL": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "pending",
+              "verified",
+              "rejected",
+              "outdated"
+            ]
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "KYCApprove": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "comments": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          },
+          "approvedAt": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

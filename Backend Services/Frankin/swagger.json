@@ -1,0 +1,413 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Frankin Mutual Fund API Service",
+    "description": "These API interfaces will be used by Frankin to interact with customer information.",
+    "contact": {
+      "email": "kumarvivek@tashiqa.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://api-frankinmutualfund.azurewebsites.net/api"
+    }
+  ],
+  "paths": {
+    "/ping": {
+      "get": {
+        "tags": [
+          "Ping"
+        ],
+        "summary": "service health check",
+        "description": "To verify is the service is up and running",
+        "operationId": "ping",
+        "responses": {
+          "200": {
+            "description": "Fincao agency service is up and running."
+          },
+          "400": {
+            "description": "Finaco is unable to start."
+          },
+          "500": {
+            "description": "Server error."
+          }
+        }
+      }
+    },
+    "/hackathon/sampleData": {
+      "post": {
+        "tags": [
+          "Azure Hackathon - Sample Data"
+        ],
+        "summary": "create sample data for hackathon",
+        "description": "This kickstart the database and onboard important systems like mutual funds into the system.",
+        "operationId": "sample-data",
+        "responses": {
+          "200": {
+            "description": "Successfully created the bank sample data."
+          },
+          "400": {
+            "description": "Sample data already available. / Unable to perform the query, check database connectivity."
+          }
+        }
+      }
+    },
+    "/profile": {
+      "post": {
+        "tags": [
+          "Bank Profile"
+        ],
+        "summary": "create bank profile",
+        "description": "Creating bank profile after KYC verification.",
+        "operationId": "create_bank_profile",
+        "responses": {
+          "200": {
+            "description": "Account created."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "pass profile information - only for hackathon",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankProfile"
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Bank Profile"
+        ],
+        "summary": "update user information for more credits -- ONLY FOR HACKATHON",
+        "description": "Add credits to user bank for purpose of buying mutuals funds in hackathon.",
+        "operationId": "update_bank_profile",
+        "responses": {
+          "200": {
+            "description": "Account updated."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "requestBody": {
+          "description": "pass credit information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BankProfile"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/profile/me": {
+      "get": {
+        "tags": [
+          "Bank Profile"
+        ],
+        "summary": "create bank profile",
+        "description": "Get bank profile for user - via JWT Token",
+        "operationId": "get_bank_profile",
+        "responses": {
+          "200": {
+            "description": "Get bank profile-"
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/mutualFund": {
+      "get": {
+        "tags": [
+          "Mutual Fund"
+        ],
+        "summary": "get list of mutual fund",
+        "description": "Get all mutual funds available for the bank.",
+        "operationId": "get_mutual_fund",
+        "responses": {
+          "200": {
+            "description": "Get list of all funds."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/profile/transactions": {
+      "post": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "create new transactions",
+        "description": "Create new transactions on behalf of user.",
+        "operationId": "create_transaction",
+        "responses": {
+          "200": {
+            "description": "Succesfull response with transaction."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ],
+        "requestBody": {
+          "description": "pass transaction information",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Transactions"
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "create new transactions",
+        "description": "Create new transactions on behalf of user.",
+        "operationId": "get_transaction",
+        "responses": {
+          "200": {
+            "description": "Succesfull response with transaction."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/govt/profile/transactions": {
+      "get": {
+        "tags": [
+          "Government"
+        ],
+        "summary": "Government access to transactions - REQUIRE GOVT BASIC AUTHENTICATION",
+        "description": "Get transactions of users.",
+        "operationId": "get_govt_transaction",
+        "responses": {
+          "200": {
+            "description": "Succesfull response with transaction."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/govt/profile/transactions/:userId": {
+      "get": {
+        "tags": [
+          "Government"
+        ],
+        "summary": "Government access to transactions for specific user - REQUIRE GOVT BASIC AUTHENTICATION",
+        "description": "Get transactions of users.",
+        "operationId": "get_govt_transaction_by_user",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "description": "ID of the user for which information is supposed to be returned",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Succesfull response with transaction."
+          },
+          "400": {
+            "description": "Inavlid body format."
+          },
+          "401": {
+            "description": "Unauthorized."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BankProfile": {
+        "type": "object",
+        "properties": {
+          "kycID": {
+            "type": "string"
+          },
+          "totalBalance": {
+            "type": "number"
+          },
+          "availableBalance": {
+            "type": "number"
+          },
+          "lockedBalance": {
+            "type": "number"
+          },
+          "totalProfit": {
+            "type": "number"
+          },
+          "currentMonthProfit": {
+            "type": "number"
+          },
+          "todayProfit": {
+            "type": "number"
+          },
+          "investedFunds": {
+            "type": "number"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      },
+      "Transactions": {
+        "type": "object",
+        "properties": {
+          "schemeID": {
+            "type": "string"
+          },
+          "transactionType": {
+            "type": "string"
+          },
+          "schemeName": {
+            "type": "string"
+          },
+          "fundDescription": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "paymentMethod": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "subTotal": {
+            "type": "number"
+          },
+          "processingFee": {
+            "type": "number"
+          },
+          "tax": {
+            "type": "string"
+          },
+          "brokerage": {
+            "type": "number"
+          },
+          "grandTotal": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string"
+          },
+          "paymentFrom": {
+            "type": "string"
+          },
+          "paymentTo": {
+            "type": "string"
+          },
+          "details": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string"
+          },
+          "updatedAt": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}

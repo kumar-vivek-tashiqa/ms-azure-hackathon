@@ -1,0 +1,39 @@
+{
+  "name": "verify-kyc-api",
+  "version": "1.0.0",
+  "description": "These API interfaces will be used by Verify KYC to interact with blockchain and expose interface to customers, banks and goverment bodies.",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest --testTimeout=500000",
+    "start": "node start.js"
+  },
+  "keywords": [
+    "microsoft-hackathon"
+  ],
+  "author": "Tashiqa - Kumar Vivek",
+  "license": "ISC",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "nodemon": "^2.0.1",
+    "supertest": "^4.0.2",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "azure-jwt-verify": "^1.0.0",
+    "azure-storage": "^2.10.3",
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.0",
+    "swagger-ui-express": "^4.1.3",
+    "unirest": "^0.6.0",
+    "uuid": "^8.1.0",
+    "file-type": "^14.1.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
