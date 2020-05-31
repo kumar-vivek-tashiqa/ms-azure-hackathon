@@ -10,6 +10,11 @@
         <title>KYC Form - Finaco MF</title>
         <link rel="stylesheet" href="./assets/css/style.css" />
 		<link rel="stylesheet" href="./assets/css/toastr.css" />
+		
+		<!--MSAL JS-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js" class="pre"></script>
+       <script type="text/javascript" src="https://alcdn.msftauth.net/lib/1.2.1/js/msal.min.js" integrity="sha384-Z4L5heyGO9VZ/MBCDx9GRtQW50Hrmp32ByIKuqwFesWyB+MDNy9ueVgclolfwj1Q" crossorigin="anonymous"></script>
+       
     </head>
     <body class="nk-body npc-invest bg-lighter">
         <div id="preloader"></div>
@@ -52,7 +57,7 @@
                                             <div class="user-toggle">
                                                 <div class="user-avatar"><span class="userInitial">KV</span></div>
                                                 <div class="user-info d-none d-xl-block">
-                                                    <div class="user-status user-status-verified"><span id="userKYCStatus">KYC Verified</span></div>
+                                                    <div class="user-status user-status-unverified"><span>KYC Unverified</span></div>
                                                     <div class="user-name dropdown-indicator"><span class="userFullName">Kumar Vivek</span></div>
                                                 </div>
                                             </div>
@@ -61,7 +66,7 @@
                                             <div class="dropdown-inner user-card-wrap bg-lighter d-none d-md-block">
                                                 <div class="user-card">
                                                     <div class="user-avatar"><span class="userInitial">KV</span></div>
-                                                    <div class="user-info"><span class="lead-text" class="userFullName">Kumar Vivek</span><span class="sub-text" id="userEmailId">kumarvivek@tashiqa.com</span></div>
+                                                    <div class="user-info"><span class="lead-text userFullName">Kumar Vivek</span><span class="sub-text" id="userEmailId">kumarvivek@tashiqa.com</span></div>
                                                     <div class="user-action">
                                                         
                                                     </div>
@@ -531,6 +536,7 @@
         <script src="./assets/js/bundle.js"></script>
         <script src="./assets/js/scripts.js"></script>
 		
+		<script src="./assets/js/msal-auth.js"></script>
 		<script src="./assets/js/kyc-form.js"></script>
 
     </body>

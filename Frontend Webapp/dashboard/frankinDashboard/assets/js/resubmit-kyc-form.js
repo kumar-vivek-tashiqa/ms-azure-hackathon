@@ -8,7 +8,7 @@ $('#kyc-country').select2({
   placeholder: 'Select a country',
 });
 
-        //sessionStorage.setItem("finacoUserBaseKey", '');
+        //sessionStorage.setItem("frankinUserBaseKey", '');
 
         var baseKey = localStorage.getItem("msal.idtoken");
 
@@ -59,9 +59,10 @@ $('#kyc-country').select2({
 		            data: {},
 		            success: function(result, textStatus, xhr) {
 
-		                	if(xhr.status == 200)
+		                	if(xhr.status == 200 && result.status == 'rejected')
 		                	{	
-
+                                    
+                                    console.log('Result :', result);
 		                		    var name = result.firstName+' '+result.lastName;
 
 									$('.userInitial').text(getNameIntial(name));
@@ -69,8 +70,10 @@ $('#kyc-country').select2({
 									$('.userFullName').text(name);
 									$('#userEmailId').text(result.emailId);
 
-									$("#preloader").hide();
 
+                                    sessionStorage.setItem("KYCID", result._id);
+
+									$("#preloader").hide();
                                     $(".nk-app-root").show(); 
 		                		
 		                    } else { 									     
@@ -91,7 +94,7 @@ $('#kyc-country').select2({
                                 $("#preloader").hide();
                                 $(".nk-app-root").show();
                             } 									     
-							//window.location.replace("./welcome.html");
+							
 		            }
 		        });
         }
@@ -323,9 +326,12 @@ $.validator.addMethod("verify-email",
 
                     console.log('Inside Form');
 
+                    var KYCID = sessionStorage.getItem("KYCID");
+
                     t.addClass("block-ui-spinner");
                     
                     var data = {
+                        _id: KYCID,
                         firstName: values.firstname,
                         lastName: values.lastname,
                         emailId: values.verify_email,
@@ -362,7 +368,7 @@ $.validator.addMethod("verify-email",
                     var formRequestURL = 'https://api-verifykyc.azurewebsites.net/api/kyc/profile';
 
                     $.ajax({
-                        type: "POST",
+                        type: "PATCH",
                         url: formRequestURL,
                         processData: false,
                         'dataType': 'json',
@@ -379,7 +385,7 @@ $.validator.addMethod("verify-email",
 
                             if(xhr.status == 200)
                             {                           
-                                toastr.success('We will keep you updated', 'KYC Request Submitted');
+                                toastr.success('We will keep you updated', 'KYC Request Resubmitted');
                                 sessionStorage.setItem("userKYCStatus", 'pending');                                
                             } else {
                                 sessionStorage.setItem("userKYCStatus", '');
@@ -412,5 +418,3 @@ $.validator.addMethod("verify-email",
 
 formValidate("#kycForm");
 
-
-		

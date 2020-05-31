@@ -8,7 +8,7 @@ $('#kyc-country').select2({
   placeholder: 'Select a country',
 });
 
-        //sessionStorage.setItem("finacoUserBaseKey", '');
+        //sessionStorage.setItem("frankinUserBaseKey", '');
 
         var baseKey = localStorage.getItem("msal.idtoken");
 
@@ -412,5 +412,3 @@ $.validator.addMethod("verify-email",
 
 formValidate("#kycForm");
 
-
-		

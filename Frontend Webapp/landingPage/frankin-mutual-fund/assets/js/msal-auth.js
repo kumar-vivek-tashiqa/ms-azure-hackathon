@@ -3,7 +3,7 @@
     // The current application coordinates were pre-registered in a B2C tenant.
     var appConfig = {
       b2cScopes: ['https://graph.microsoft.com/user.read','https://graph.microsoft.com/user.readbasic.all'],
-      webApi: "https://dfmplatform.onmicrosoft.com/dfmp"
+      webApi: "https://dfmplatform.onmicrosoft.com/FrankinApp"
     };
 
     // configuration to initialize msal

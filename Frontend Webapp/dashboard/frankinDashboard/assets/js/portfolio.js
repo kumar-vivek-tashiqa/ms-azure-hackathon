@@ -37,7 +37,7 @@
     }
 
 
-        //sessionStorage.setItem("finacoUserBaseKey", '');
+        //sessionStorage.setItem("frankinUserBaseKey", '');
 
         var baseKey = localStorage.getItem("msal.idtoken");
 
@@ -48,7 +48,7 @@
 
 		    var authKYCRequestURL = 'https://api-verifykyc.azurewebsites.net/api/kyc/profile/me';
 
-		    var finacoProfile = 'https://api-finacomutualfund.azurewebsites.net/api/profile/me';
+		    var frankinProfile = 'https://api-frankinmutualfund.azurewebsites.net/api/profile/me';
 
 		        $.ajax({
 		            type: "GET",
@@ -65,17 +65,17 @@
 
 		                						        $.ajax({
 												            type: "GET",
-												            url: finacoProfile,
+												            url: frankinProfile,
 										                    beforeSend: function (xhr) {
 										                        xhr.setRequestHeader('Authorization', 'Bearer ' + baseKey);
 										                    },
 												            data: {},
-												            success: function(finacoResult, textStatus, xhr) {
+												            success: function(frankinResult, textStatus, xhr) {
 
 												                	if(xhr.status == 200)
 												                	{	                    	
 						
-												                		console.log('Bank Profile :', finacoResult);
+												                		console.log('Bank Profile :', frankinResult);
 
 												                		var name = result.firstName+' '+result.lastName;
 
@@ -85,31 +85,31 @@
 
 																		sessionStorage.setItem("userFullName", name);
 																		sessionStorage.setItem("userEmailId", result.emailId);
-																		sessionStorage.setItem("userAccountBalance", finacoResult.availableBalance);
-																		sessionStorage.setItem("userLockedBalance", finacoResult.lockedBalance);
-																		sessionStorage.setItem("totalProfit", finacoResult.totalProfit);
+																		sessionStorage.setItem("userAccountBalance", frankinResult.availableBalance);
+																		sessionStorage.setItem("userLockedBalance", frankinResult.lockedBalance);
+																		sessionStorage.setItem("totalProfit", frankinResult.totalProfit);
 
-																		sessionStorage.setItem("totalProfit", finacoResult.totalProfit);
-																		sessionStorage.setItem("currentMonthProfit", finacoResult.currentMonthProfit);
-																		sessionStorage.setItem("todayProfit", finacoResult.todayProfit);
-																		sessionStorage.setItem("investedFunds", finacoResult.investedFunds);
+																		sessionStorage.setItem("totalProfit", frankinResult.totalProfit);
+																		sessionStorage.setItem("currentMonthProfit", frankinResult.currentMonthProfit);
+																		sessionStorage.setItem("todayProfit", frankinResult.todayProfit);
+																		sessionStorage.setItem("investedFunds", frankinResult.investedFunds);
 
 												                		$('.userInitial').text(getNameIntial(name));
 												                		
 												                		$('.userFullName').text(name);
 												                		$('#userEmailId').text(result.emailId);
 
-												                		$('.userAccountBalance').text(formatCurrency(finacoResult.availableBalance));
-												                		$('.userLockedBalance').text(formatCurrency(finacoResult.lockedBalance));
+												                		$('.userAccountBalance').text(formatCurrency(frankinResult.availableBalance));
+												                		$('.userLockedBalance').text(formatCurrency(frankinResult.lockedBalance));
 
-												                		$('.totalProfit').text(formatCurrency(finacoResult.totalProfit) );
-												                		$('.monthProfit').text(formatCurrency(finacoResult.currentMonthProfit) );
-												                		$('.todayProfit').text(formatCurrency(finacoResult.todayProfit));
+												                		$('.totalProfit').text(formatCurrency(frankinResult.totalProfit) );
+												                		$('.monthProfit').text(formatCurrency(frankinResult.currentMonthProfit) );
+												                		$('.todayProfit').text(formatCurrency(frankinResult.todayProfit));
 
-												                		var availFunds = Number(finacoResult.availableBalance) - Number(finacoResult.lockedBalance);
+												                		var availFunds = Number(frankinResult.availableBalance) - Number(frankinResult.lockedBalance);
 												                		$('#availFunds').text(formatCurrency(availFunds));
 
-												                		$('#investedFunds').text(finacoResult.investedFunds);
+												                		$('#investedFunds').text(frankinResult.investedFunds);
 
 												               
 
@@ -146,7 +146,7 @@
 
 																	
 
-												                    	var createProfileURL = 'https://api-finacomutualfund.azurewebsites.net/api/profile';
+												                    	var createProfileURL = 'https://api-frankinmutualfund.azurewebsites.net/api/profile';
 
 
 													                    $.ajax({
@@ -219,6 +219,8 @@
         }
 
         checkAuthentication();
+
+
 
 
 
@@ -299,7 +301,7 @@
 																		  "investedFunds": Number(investedFunds)
 																		}	
 
-												                    	var updateProfileURL = 'https://api-finacomutualfund.azurewebsites.net/api/profile';
+												                    	var updateProfileURL = 'https://api-frankinmutualfund.azurewebsites.net/api/profile';
 
 
 													                    $.ajax({

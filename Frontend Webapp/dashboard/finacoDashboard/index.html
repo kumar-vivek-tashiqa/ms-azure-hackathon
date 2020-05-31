@@ -9,6 +9,11 @@
         <link rel="shortcut icon" href="./assets/images/finaco/favicon.png" />
         <title>Portfolio Summary - Finaco MF</title>
         <link rel="stylesheet" href="./assets/css/style.css" />
+		<link rel="stylesheet" href="./assets/css/toastr.css" />
+		
+		<!--MSAL JS-->
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.4/bluebird.min.js" class="pre"></script>
+       <script type="text/javascript" src="https://alcdn.msftauth.net/lib/1.2.1/js/msal.min.js" integrity="sha384-Z4L5heyGO9VZ/MBCDx9GRtQW50Hrmp32ByIKuqwFesWyB+MDNy9ueVgclolfwj1Q" crossorigin="anonymous"></script>
         
     </head>
     <body class="nk-body npc-invest bg-lighter">
@@ -61,7 +66,7 @@
                              <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">      
                                     <li class="hide-mb-sm">
-                                        <a href="javascript:;" class="nk-quick-nav-icon signout"><em class="icon ni ni-signout"></em></a>
+                                        <a href="javascript:;" onclick="logout()" class="nk-quick-nav-icon signout"><em class="icon ni ni-signout"></em></a>
                                     </li>
                                     <li class="dropdown user-dropdown order-sm-first">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -81,6 +86,8 @@
                                                     <div class="user-action">
                                                         <a class="btn btn-icon mr-n2" href="./profile.html"><em class="icon ni ni-setting"></em></a>
                                                     </div>
+													
+													<input type="text" id="KYCID" style="display:none;"/>
                                                 </div>
                                             </div>
                                             <div class="dropdown-inner user-account-info">
@@ -101,7 +108,7 @@
                                             <div class="dropdown-inner">
                                                 <ul class="link-list">
                                                     <li>
-                                                        <a href="javascript:;"><em class="icon ni ni-signout signout"></em><span>Sign out</span></a>
+                                                        <a href="javascript:;"  onclick="logout()" ><em class="icon ni ni-signout signout"></em><span>Sign out</span></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -249,7 +256,7 @@
                                                     <div class="nk-iv-wg2">
                                                         <div class="nk-iv-wg2-title"><h6 class="title">My Investment</h6></div>
                                                         <div class="nk-iv-wg2-text">
-                                                            <div class="nk-iv-wg2-amount ui-v2">3<span class="sub"></span> Active Funds</div>
+                                                            <div class="nk-iv-wg2-amount ui-v2" id="investedFunds">3<span class="sub"></span> Active Funds</div>
                                                             <ul class="nk-iv-wg2-list">
                                                                 
                                                             </ul>
@@ -321,9 +328,11 @@
 							<div class="modal-content">
 							   <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
 							   <div class="modal-body modal-body-lg text-center">
-								  <div class="nk-modal">
+								  <div class="nk-modal" id="add-credits-container">
 									 <em class="nk-modal-icon icon icon-circle icon-circle-xxl ni ni-wallet-in bg-warning"></em>
 									 <h4 class="nk-modal-title">Add Credits to your Wallet</h4>
+									 
+									 <form id="add-credit-form" action="#" method="post" novalidate="novalidate">
 									 <div class="nk-modal-text">
 										<p class="caption-text">As a part of MS Hackathon, you can add credits here to use our service</p>
 										
@@ -340,10 +349,11 @@
                                 
                                      </div>
 									 <div class="nk-modal-action">
-										<a href="#" class="btn btn-lg btn-mw btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#confirm-invest">Add to Wallet</a>
+										<button type="submit" class="btn btn-lg btn-mw btn-primary">Add to Wallet</button>
 										<div class="sub-text sub-text-alt mt-3 mb-4">This dummy deposit of credits transaction will not appear on your ledger.</div>
 										<a href="#" class="link link-soft" data-dismiss="modal">Cancel and return</a>
 									</div>
+									</form>
 								  </div>
 							   </div>
 							   <div class="modal-footer bg-lighter">
@@ -382,8 +392,9 @@
         <script src="./assets/js/bundle.js"></script>
         <script src="./assets/js/scripts.js"></script>
 		
+		<script src="./assets/js/msal-auth.js"></script>
+		
 		<script src="./assets/js/portfolio.js"></script>
-
         <script src="./assets/js/charts/chart-invest.js"></script>
     </body>
 </html>

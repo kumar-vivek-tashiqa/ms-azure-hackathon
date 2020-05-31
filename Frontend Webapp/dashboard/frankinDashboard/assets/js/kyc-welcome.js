@@ -1,4 +1,4 @@
-        //sessionStorage.setItem("finacoUserBaseKey", '');
+        //sessionStorage.setItem("frankinUserBaseKey", '');
 
         var baseKey = localStorage.getItem("msal.idtoken");
 
@@ -117,4 +117,4 @@
         checkKYCStatus();
 
 
-  
+   

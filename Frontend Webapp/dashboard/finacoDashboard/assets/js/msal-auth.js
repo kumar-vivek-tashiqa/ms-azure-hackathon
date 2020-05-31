@@ -33,10 +33,6 @@
         scopes: appConfig.b2cScopes
     };
 
-    var login_button = document.getElementById("login-button");
-    var create_account_button =  document.getElementById("create-account-button");
-    var console_button =  document.getElementById("console-button");
-    var logout_button = document.getElementById("logout-button");
 
 
 	window.addEventListener("load", function () {
@@ -47,21 +43,15 @@
 
 	function checkSignIn(){
 
-    console.log('Claim :', myMSALObj);
-
 		console.log("Account :", myMSALObj.getAccount());
 
 		if (myMSALObj.getAccount() == null) {
-			    login_button.style.display = "inline-block";
-	        create_account_button.style.display = "inline-block";
-	        console_button.style.display = "none"; 
-	        logout_button.style.display = "none"; 
+
+      logout();
+			   
 		}
 		else{
-			    login_button.style.display = "none";
-	        create_account_button.style.display = "none";
-	        console_button.style.display = "inline-block"; 
-	        logout_button.style.display = "inline-block";
+			    
 		}
 	}
 
@@ -82,16 +72,12 @@
 	    console.log('Callback Response :', response);
 
 	    if( response != null && error ==''){
-	    	  login_button.style.display = "none";
-	        create_account_button.style.display = "none";
-	        console_button.style.display = "inline-block"; 
-	        logout_button.style.display = "inline-block";
+
+        logout();
+	    	 
 	    }
 	    else{
-	    	login_button.style.display = "inline-block";
-	        create_account_button.style.display = "inline-block";
-	        console_button.style.display = "none"; 
-	        logout_button.style.display = "none"; 
+	    	
 	    }
     });
 

@@ -233,14 +233,6 @@
                 },
             });
         }),
-        (r.Dropzone = function (t, n) {
-            u(t).exists() &&
-                u(t).each(function () {
-                    var t = { autoDiscover: !1 },
-                        e = n ? h(t, n) : t;
-                    u(this).addClass("dropzone").dropzone(e);
-                });
-        }),
         (r.Wizard = function () {
             var i = u(".nk-wizard").show();
             i.steps({
@@ -320,9 +312,6 @@
         (r.Slider.init = function () {
             r.Slick(".slider-init");
         }),
-        (r.Dropzone.init = function () {
-            r.Dropzone(".upload-zone", { url: "/images" });
-        }),
         (r.DataTable.init = function () {
             r.DataTable(".datatable-init", { responsive: { details: !0 } }), (u.fn.DataTable.ext.pager.numbers_length = 7);
         }),
@@ -349,7 +338,7 @@
             r.Picker.date(".date-picker"), r.Picker.dob(".date-picker-alt"), r.Picker.time(".time-picker");
         }),
         (r.Addons.Init = function () {
-            r.Knob.init(), r.Range.init(), r.Select2.init(), r.Dropzone.init(), r.Slider.init(), r.DataTable.init();
+            r.Knob.init(), r.Range.init(), r.Select2.init(), r.Slider.init(), r.DataTable.init();
         }),
         (r.TGL.init = function () {
             r.TGL.content(".toggle"), r.TGL.expand(".toggle-expand"), r.TGL.expand(".toggle-opt", { toggle: !1 }), r.TGL.showmenu(".nk-nav-toggle"), r.TGL.ddmenu("." + t + "-toggle", { self: t + "-toggle", child: t + "-sub" });
@@ -375,3 +364,5 @@
         }),
         r.init();
 })(MSHackthon, jQuery);
+
+

@@ -38434,3 +38434,38 @@ margin-top: 10px;
     z-index: 100001;
     cursor: pointer;
 }
+
+
+
+
+/* Blockchain Data */
+
+#jsonData{
+  background-color:#272822;
+  padding:20px;
+  color:white;
+  font-family:monaco, Consolas, Menlo, Courier, monospace;
+}
+
+.of{
+  color:#adde39;
+  padding:5px 0px 5px 5px;
+}
+.in{
+  color:#f33775;
+  margin-left:40px;
+  padding:5px;
+}
+.level-1{
+  font-size:1em;
+  font-weight:bold;
+}
+.number{
+  color:#ae81fa;
+  padding:5px 0px 5px 5px;  
+}
+.level-2{
+  margin-left:30px;
+  font-size:1em;
+  font-weight:bold;
+}

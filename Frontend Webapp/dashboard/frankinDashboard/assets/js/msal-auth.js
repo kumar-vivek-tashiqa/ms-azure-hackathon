@@ -3,13 +3,13 @@
     // The current application coordinates were pre-registered in a B2C tenant.
     var appConfig = {
       b2cScopes: ['https://graph.microsoft.com/user.read','https://graph.microsoft.com/user.readbasic.all'],
-      webApi: "https://dfmplatform.onmicrosoft.com/FinacoApp"
+      webApi: "https://dfmplatform.onmicrosoft.com/FrankinApp"
     };
 
     // configuration to initialize msal
     const msalConfig = {
         auth: {
-            clientId: "34e99680-c387-49a4-8f76-9c07a70cc4b7", //This is your client ID
+            clientId: "1e194e91-56a7-4e54-b35b-ded2a38ca38f", //This is your client ID
             authority: "https://dfmplatform.b2clogin.com/dfmplatform.onmicrosoft.com/b2c_1_dfmpSignup", //This is your tenant info
             validateAuthority: false
         },
@@ -34,9 +34,11 @@
     };
 
     var login_button = document.getElementById("login-button");
+    var mob_login_button = document.getElementById("mob-login-button");
     var create_account_button =  document.getElementById("create-account-button");
     var console_button =  document.getElementById("console-button");
     var logout_button = document.getElementById("logout-button");
+    var mob_logout_button = document.getElementById("mob-logout-button");
 
 
 	window.addEventListener("load", function () {
@@ -46,27 +48,17 @@
 
 
 	function checkSignIn(){
-
-    console.log('Claim :', myMSALObj);
-
 		console.log("Account :", myMSALObj.getAccount());
 
 		if (myMSALObj.getAccount() == null) {
-			    login_button.style.display = "inline-block";
-	        create_account_button.style.display = "inline-block";
-	        console_button.style.display = "none"; 
-	        logout_button.style.display = "none"; 
+			logout();
 		}
 		else{
-			    login_button.style.display = "none";
-	        create_account_button.style.display = "none";
-	        console_button.style.display = "inline-block"; 
-	        logout_button.style.display = "inline-block";
+
 		}
 	}
 
 	function signIn() {
-    //jQuery("#login-button").append('<img id="picture" src="./assets/images/rolling.gif" style="vertical-align:middle"/>');
 	  myMSALObj.loginRedirect(loginRequest);
   }
 
@@ -82,16 +74,10 @@
 	    console.log('Callback Response :', response);
 
 	    if( response != null && error ==''){
-	    	  login_button.style.display = "none";
-	        create_account_button.style.display = "none";
-	        console_button.style.display = "inline-block"; 
-	        logout_button.style.display = "inline-block";
+	    	  logout();
 	    }
 	    else{
-	    	login_button.style.display = "inline-block";
-	        create_account_button.style.display = "inline-block";
-	        console_button.style.display = "none"; 
-	        logout_button.style.display = "none"; 
+	
 	    }
     });
 
