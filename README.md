@@ -29,7 +29,7 @@ https://api-governmentagency.azurewebsites.net/api/swagger/api-docs/
 
 Below steps cover what are the steps to run these services
 
-###Backend Services
+### Backend Services
 
 * Clone the repository which you want to run locally or deploy on Azure App Service.
 
@@ -73,7 +73,7 @@ Below steps cover what are the steps to run these services
 * Run node service with `npm start`
 * Visit `hostedURL:1337`, the service should prompt healthy service response.
 
-###Frontend App
+### Frontend App
 
 * Clone the folder in repository which you want to deploy.
 * Use Azure DevOps pipeline or manually push the source files to Azure Storage Account of your choice.
